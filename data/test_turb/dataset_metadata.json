@@ -1,0 +1,61 @@
+{
+  "simulation_method": "QuickTurbSim",
+  "clean_images": [
+    {
+      "filename": "boat.jpg",
+      "path": "data/turb_comparison/clean/boat.jpg"
+    }
+  ],
+  "turbulent_pairs": [
+    {
+      "clean_image": "boat.jpg",
+      "turbulent_image": "boat_turb_weak_0.png",
+      "preset": "weak",
+      "variation_idx": 0,
+      "turb_strength": 3,
+      "sigma": 5,
+      "turb_scale": "1 / 64",
+      "clean_path": "data/turb_comparison/clean/boat.jpg",
+      "turbulent_path": "data/turb_comparison/turbulent/boat_turb_weak_0.png"
+    },
+    {
+      "clean_image": "boat.jpg",
+      "turbulent_image": "boat_turb_medium_0.png",
+      "preset": "medium",
+      "variation_idx": 0,
+      "turb_strength": 7,
+      "sigma": 10,
+      "turb_scale": "1 / 96",
+      "clean_path": "data/turb_comparison/clean/boat.jpg",
+      "turbulent_path": "data/turb_comparison/turbulent/boat_turb_medium_0.png"
+    },
+    {
+      "clean_image": "boat.jpg",
+      "turbulent_image": "boat_turb_strong_0.png",
+      "preset": "strong",
+      "variation_idx": 0,
+      "turb_strength": 10,
+      "sigma": 15,
+      "turb_scale": "1 / 128",
+      "clean_path": "data/turb_comparison/clean/boat.jpg",
+      "turbulent_path": "data/turb_comparison/turbulent/boat_turb_strong_0.png"
+    }
+  ],
+  "turbulence_presets": {
+    "weak": {
+      "turb_strength": 3,
+      "sigma": 5,
+      "turb_scale": "1 / 64"
+    },
+    "medium": {
+      "turb_strength": 7,
+      "sigma": 10,
+      "turb_scale": "1 / 96"
+    },
+    "strong": {
+      "turb_strength": 10,
+      "sigma": 15,
+      "turb_scale": "1 / 128"
+    }
+  }
+}

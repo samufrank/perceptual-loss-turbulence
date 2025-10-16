@@ -42,6 +42,11 @@ data/turbulent/*.JPEG
 !data/**/metadata.json
 !data/**/.gitkeep
 
+# Directories
+DAATSim/
+QuickTurbSim/
+logs/
+
 # Allow all results (figures, JSON, summaries)
 
 # Environment

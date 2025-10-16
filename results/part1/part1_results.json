@@ -1,0 +1,11 @@
+{
+    "l1_loss": 5.7408547623120585,
+    "l2_loss": 11.548899224087204,
+    "image_shape": [
+        1109,
+        1555,
+        3
+    ],
+    "translation_pixels": 1,
+    "image_path": "data/test_images/imagenet_boat.jpg"
+}
