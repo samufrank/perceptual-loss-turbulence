@@ -1,0 +1,57 @@
+2025-10-16 23:26:54,088 [INFO] ============================================================
+2025-10-16 23:26:54,088 [INFO] VGG Baseline Evaluation
+2025-10-16 23:26:54,088 [INFO] ============================================================
+2025-10-16 23:26:54,088 [INFO] Test directory: data/part4_dataset_split/test
+2025-10-16 23:26:54,088 [INFO] Output directory: results/part4/baselines
+2025-10-16 23:26:54,098 [INFO] Using device: mps
+2025-10-16 23:26:54,098 [INFO] 
+Setting up data loader...
+2025-10-16 23:26:54,098 [INFO] Test batches: 13
+2025-10-16 23:26:54,098 [INFO] Test samples: 198
+2025-10-16 23:26:54,098 [INFO] 
+============================================================
+2025-10-16 23:26:54,098 [INFO] Experiment 1: VGG relu3_3 (Single Layer)
+2025-10-16 23:26:54,098 [INFO] ============================================================
+2025-10-16 23:26:54,518 [INFO] Evaluating on 13 batches...
+2025-10-16 23:27:29,215 [INFO] 
+Results:
+2025-10-16 23:27:29,216 [INFO]   L2 Distance: 5.3159 ± 1.2116
+2025-10-16 23:27:29,216 [INFO]   L2 Median: 5.0779
+2025-10-16 23:27:29,216 [INFO]   L2 Range: [2.6466, 10.0982]
+2025-10-16 23:27:29,216 [INFO]   Cosine Similarity: 0.8349 ± 0.0610
+2025-10-16 23:27:29,216 [INFO] 
+============================================================
+2025-10-16 23:27:29,216 [INFO] Experiment 2: VGG Multi-Layer (relu2_2 + relu3_3 + relu4_3)
+2025-10-16 23:27:29,216 [INFO] ============================================================
+2025-10-16 23:27:29,699 [INFO] Evaluating on 13 batches...
+2025-10-16 23:28:10,043 [INFO] 
+Results:
+2025-10-16 23:28:10,044 [INFO]   L2 Distance: 3.8611 ± 0.8712
+2025-10-16 23:28:10,044 [INFO]   L2 Median: 3.7125
+2025-10-16 23:28:10,044 [INFO]   L2 Range: [2.1612, 7.3334]
+2025-10-16 23:28:10,044 [INFO]   Cosine Similarity: 0.8201 ± 0.0602
+2025-10-16 23:28:10,044 [INFO] 
+============================================================
+2025-10-16 23:28:10,044 [INFO] Comparison
+2025-10-16 23:28:10,044 [INFO] ============================================================
+2025-10-16 23:28:10,044 [INFO] 
+L2 Distance (lower is better):
+2025-10-16 23:28:10,045 [INFO]   VGG relu3_3:     5.3159
+2025-10-16 23:28:10,045 [INFO]   VGG multi-layer: 3.8611
+2025-10-16 23:28:10,045 [INFO]   Improvement: 27.37% (multi-layer better)
+2025-10-16 23:28:10,045 [INFO] 
+Cosine Similarity (higher is better):
+2025-10-16 23:28:10,045 [INFO]   VGG relu3_3:     0.8349
+2025-10-16 23:28:10,045 [INFO]   VGG multi-layer: 0.8201
+2025-10-16 23:28:10,045 [INFO]   Change: -8.95% (single layer better)
+2025-10-16 23:28:10,046 [INFO] 
+Results saved to: results/part4/baselines/baseline_results.json
+2025-10-16 23:28:10,047 [INFO] Comparison table saved to: results/part4/baselines/baseline_comparison.txt
+2025-10-16 23:28:10,047 [INFO] 
+============================================================
+2025-10-16 23:28:10,047 [INFO] Baseline evaluation complete!
+2025-10-16 23:28:10,048 [INFO] ============================================================
+2025-10-16 23:28:10,048 [INFO] 
+Target for custom encoders:
+2025-10-16 23:28:10,048 [INFO]   Beat VGG relu3_3: L2 < 5.3159, Cosine > 0.8349
+2025-10-16 23:28:10,048 [INFO]   Beat VGG multi-layer: L2 < 3.8611, Cosine > 0.8201

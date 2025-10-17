@@ -32,9 +32,8 @@ wheels/
 !**/checkpoints/final_model.pth
 
 # Data - exclude raw images but keep metadata and structure
-data/clean/*.jpg
-data/clean/*.png
-data/clean/*.JPEG
+data/clean_images/*.jpg
+data/raw/
 data/turbulent/*.jpg
 data/turbulent/*.png
 data/turbulent/*.JPEG

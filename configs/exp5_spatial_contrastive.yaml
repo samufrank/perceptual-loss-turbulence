@@ -1,0 +1,39 @@
+# Experiment 5: Custom Encoder - Spatial + Contrastive
+# Tests if contrastive learning improves discrimination
+
+experiment_name: "exp5_spatial_contrastive"
+
+seed: 42
+
+model:
+  model_type: "custom"
+  input_channels: 3
+  base_channels: 64
+  depth: 4
+  bottleneck_dim: 512
+  use_multiscale: false
+
+loss:
+  spatial_weight: 1.0
+  frequency_weight: 0.0
+  contrastive_weight: 0.5
+  temperature: 0.07
+  margin: 1.0
+
+training:
+  batch_size: 16
+  learning_rate: 0.0001
+  epochs: 50
+  weight_decay: 0.00001
+  use_scheduler: true
+  save_every: 5
+
+data:
+  train_dir: "data/part4_dataset_split/train"
+  test_dir: "data/part4_dataset_split/test"
+  resolution: 512
+  num_workers: 4
+
+output:
+  checkpoint_dir: "results/part4/exp5_spatial_contrastive"
+

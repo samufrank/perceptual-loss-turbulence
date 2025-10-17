@@ -1,0 +1,24 @@
+{
+  "exp1_vgg_relu3_3": {
+    "l2_distance_mean": 5.315927028656006,
+    "l2_distance_std": 1.211603045463562,
+    "l2_distance_median": 5.0778913497924805,
+    "l2_distance_min": 2.646587371826172,
+    "l2_distance_max": 10.098187446594238,
+    "cosine_similarity_mean": 0.8349229693412781,
+    "cosine_similarity_std": 0.06100361421704292,
+    "cosine_similarity_median": 0.8446211814880371,
+    "n_samples": 198
+  },
+  "exp2_vgg_multilayer": {
+    "l2_distance_mean": 3.8610692024230957,
+    "l2_distance_std": 0.8711809515953064,
+    "l2_distance_median": 3.7124929428100586,
+    "l2_distance_min": 2.161172389984131,
+    "l2_distance_max": 7.333371162414551,
+    "cosine_similarity_mean": 0.820149302482605,
+    "cosine_similarity_std": 0.060170602053403854,
+    "cosine_similarity_median": 0.828031063079834,
+    "n_samples": 198
+  }
+}
