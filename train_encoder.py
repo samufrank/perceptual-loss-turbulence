@@ -86,7 +86,7 @@ def load_checkpoint(model, optimizer, checkpoint_path):
     return checkpoint['epoch'], checkpoint['loss'], checkpoint.get('metrics', {})
 
 
-def train_epoch(model, train_loader, criterion, optimizer, device, logger):
+def train_epoch(model, train_loader, criterion, optimizer, scaler, device, logger):
     """Train for one epoch."""
     model.train()
     
@@ -97,7 +97,10 @@ def train_epoch(model, train_loader, criterion, optimizer, device, logger):
         'contrastive': []
     }
     
+    import time
+    start = time.time()
     for batch_idx, batch in enumerate(train_loader):
+        load_time = time.time() - start
         clean = batch['clean'].to(device)
         turb = batch['turbulent'].to(device)
         filenames = batch['clean_filename']
@@ -105,29 +108,31 @@ def train_epoch(model, train_loader, criterion, optimizer, device, logger):
         # Forward pass
         optimizer.zero_grad()
         
-        clean_out = model(clean)
-        turb_out = model(turb)
+        with torch.cuda.amp.autocast():
+            clean_out = model(clean)
+            turb_out = model(turb)
         
-        clean_feat = clean_out['bottleneck']
-        turb_feat = turb_out['bottleneck']
+            clean_feat = clean_out['bottleneck']
+            turb_feat = turb_out['bottleneck']
         
-        # Compute loss
-        losses = criterion(clean_feat, turb_feat, filenames)
+            # Compute loss
+            losses = criterion(clean_feat, turb_feat, filenames)
         
         # Backward pass
-        losses['total'].backward()
-        optimizer.step()
+        # losses['total'].backward()
+        # optimizer.step()
+        scaler.scale(losses['total']).backward()
+        scaler.step(optimizer)
+        scaler.update()
         
         # Record losses
         for key in epoch_losses.keys():
             epoch_losses[key].append(losses[key].item())
         
-        # Log batch
+        train_time = time.time() - start - load_time
         if batch_idx % 10 == 0:
-            logger.info(
-                f"Batch {batch_idx}/{len(train_loader)}: "
-                f"Loss={losses['total'].item():.4f}"
-            )
+            logger.info(f"Batch {batch_idx}: load={load_time:.2f}s, train={train_time:.2f}s")
+        start = time.time()
     
     # Compute epoch averages
     avg_losses = {key: np.mean(vals) for key, vals in epoch_losses.items()}
@@ -135,7 +140,7 @@ def train_epoch(model, train_loader, criterion, optimizer, device, logger):
     return avg_losses
 
 
-def validate(model, val_loader, criterion, device):
+def validate(model, val_loader, criterion, scaler, device):
     """Validate model."""
     model.eval()
     
@@ -202,6 +207,10 @@ def train(config):
     else:
         device = torch.device('cpu')
     logger.info(f"Using device: {device}")
+    logger.info(f"CUDA available: {torch.cuda.is_available()}")
+    logger.info(f"CUDA device count: {torch.cuda.device_count()}")
+    if torch.cuda.is_available():
+        logger.info(f"CUDA device name: {torch.cuda.get_device_name(0)}")
     
     # Data loaders
     logger.info("Setting up data loaders...")
@@ -246,6 +255,8 @@ def train(config):
         weight_decay=config['training'].get('weight_decay', 0)
     )
     
+    scaler = torch.cuda.amp.GradScaler()
+    
     # Scheduler
     if config['training'].get('use_scheduler', True):
         scheduler = optim.lr_scheduler.CosineAnnealingLR(
@@ -266,10 +277,10 @@ def train(config):
         logger.info(f"\nEpoch {epoch+1}/{config['training']['epochs']}")
         
         # Train
-        train_losses = train_epoch(model, train_loader, criterion, optimizer, device, logger)
+        train_losses = train_epoch(model, train_loader, criterion, optimizer, scaler, device, logger)
         
         # Validate
-        val_losses = validate(model, test_loader, criterion, device)
+        val_losses = validate(model, test_loader, criterion, scaler, device)
         
         # Scheduler step
         if scheduler is not None:
@@ -280,8 +291,8 @@ def train(config):
         
         # Log
         logger.info(f"Epoch {epoch+1} Results:")
-        logger.info(f"  Train Loss: {train_losses['total']:.4f}")
-        logger.info(f"  Val Loss: {val_losses['total']:.4f}")
+        logger.info(f"  Train Loss: {train_losses['total']:.6f}")
+        logger.info(f"  Val Loss: {val_losses['total']:.6f}")
         logger.info(f"  Val L2 Distance: {val_losses['l2_distance']:.4f}")
         logger.info(f"  Val Cosine Sim: {val_losses['cosine_similarity']:.4f}")
         logger.info(f"  Learning Rate: {current_lr:.6f}")
