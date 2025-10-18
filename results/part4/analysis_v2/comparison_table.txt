@@ -1,0 +1,9 @@
+Experiment Comparison - Final Epoch Metrics
+================================================================================
+
+Experiment                     Train Loss      Val Loss        L2 Distance     Cosine Sim     
+--------------------------------------------------------------------------------
+exp3_spatial_only_v2           0.000017        0.000017        0.083222        0.962659       
+exp4_spatial_frequency_v2      0.004816        0.002756        1.036372        0.997303       
+exp5_spatial_contrastive_v2    0.092248        0.276864        0.642744        0.948800       
+exp6_full_model_v2             0.254675        0.252352        0.778768        0.998120       

@@ -1,0 +1,1010 @@
+2025-10-17 19:48:55,216 [INFO] ============================================================
+2025-10-17 19:48:55,217 [INFO] Starting training
+2025-10-17 19:48:55,217 [INFO] ============================================================
+2025-10-17 19:48:55,217 [INFO] Config: {'experiment_name': 'exp3_spatial_only_large', 'seed': 42, 'model': {'model_type': 'custom', 'input_channels': 3, 'base_channels': 64, 'depth': 4, 'bottleneck_dim': 512, 'use_multiscale': False}, 'loss': {'spatial_weight': 1.0, 'frequency_weight': 0.0, 'contrastive_weight': 0.0, 'temperature': 0.07, 'use_improved_losses': False}, 'training': {'batch_size': 16, 'learning_rate': 0.0001, 'epochs': 50, 'weight_decay': 1e-05, 'use_scheduler': True, 'save_every': 5}, 'data': {'train_dir': 'data/part4_dataset_large_split/train', 'test_dir': 'data/part4_dataset_large_split/test', 'resolution': 256, 'num_workers': 4}, 'output': {'checkpoint_dir': 'results/part4/exp3_spatial_only_large'}}
+2025-10-17 19:48:55,218 [INFO] Random seed: 42
+2025-10-17 19:48:55,394 [INFO] Using device: cuda
+2025-10-17 19:48:55,394 [INFO] CUDA available: True
+2025-10-17 19:48:55,436 [INFO] CUDA device count: 1
+2025-10-17 19:48:55,438 [INFO] CUDA device name: NVIDIA GeForce RTX 3070
+2025-10-17 19:48:55,438 [INFO] Setting up data loaders...
+2025-10-17 19:48:55,442 [INFO] Train batches: 101
+2025-10-17 19:48:55,442 [INFO] Test batches: 25
+2025-10-17 19:48:55,442 [INFO] Creating model...
+2025-10-17 19:48:55,683 [INFO] Model parameters: 5,171,328
+2025-10-17 19:48:55,685 [INFO] Starting training loop...
+2025-10-17 19:48:55,685 [INFO] 
+Epoch 1/50
+2025-10-17 19:48:56,814 [INFO] Batch 0: load=0.34s, train=0.79s
+2025-10-17 19:48:59,178 [INFO] Batch 10: load=0.00s, train=0.24s
+2025-10-17 19:49:01,546 [INFO] Batch 20: load=0.00s, train=0.23s
+2025-10-17 19:49:03,920 [INFO] Batch 30: load=0.00s, train=0.24s
+2025-10-17 19:49:06,296 [INFO] Batch 40: load=0.00s, train=0.23s
+2025-10-17 19:49:08,665 [INFO] Batch 50: load=0.00s, train=0.24s
+2025-10-17 19:49:11,041 [INFO] Batch 60: load=0.00s, train=0.24s
+2025-10-17 19:49:13,412 [INFO] Batch 70: load=0.00s, train=0.24s
+2025-10-17 19:49:15,787 [INFO] Batch 80: load=0.00s, train=0.24s
+2025-10-17 19:49:18,151 [INFO] Batch 90: load=0.00s, train=0.24s
+2025-10-17 19:49:20,426 [INFO] Batch 100: load=0.00s, train=0.14s
+2025-10-17 19:49:27,703 [INFO] Epoch 1 Results:
+2025-10-17 19:49:27,703 [INFO]   Train Loss: 0.004425
+2025-10-17 19:49:27,703 [INFO]   Val Loss: 0.000583
+2025-10-17 19:49:27,703 [INFO]   Val L2 Distance: 0.4936
+2025-10-17 19:49:27,703 [INFO]   Val Cosine Sim: 0.9786
+2025-10-17 19:49:27,703 [INFO]   Learning Rate: 0.000100
+2025-10-17 19:49:27,777 [INFO] New best model! Val loss: 0.0006
+2025-10-17 19:49:27,777 [INFO] 
+Epoch 2/50
+2025-10-17 19:49:28,317 [INFO] Batch 0: load=0.30s, train=0.24s
+2025-10-17 19:49:30,690 [INFO] Batch 10: load=0.00s, train=0.23s
+2025-10-17 19:49:33,062 [INFO] Batch 20: load=0.00s, train=0.23s
+2025-10-17 19:49:35,438 [INFO] Batch 30: load=0.00s, train=0.24s
+2025-10-17 19:49:37,810 [INFO] Batch 40: load=0.00s, train=0.24s
+2025-10-17 19:49:40,187 [INFO] Batch 50: load=0.00s, train=0.24s
+2025-10-17 19:49:42,558 [INFO] Batch 60: load=0.00s, train=0.24s
+2025-10-17 19:49:44,932 [INFO] Batch 70: load=0.00s, train=0.24s
+2025-10-17 19:49:47,313 [INFO] Batch 80: load=0.00s, train=0.24s
+2025-10-17 19:49:49,678 [INFO] Batch 90: load=0.00s, train=0.24s
+2025-10-17 19:49:51,939 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 19:49:59,223 [INFO] Epoch 2 Results:
+2025-10-17 19:49:59,224 [INFO]   Train Loss: 0.000519
+2025-10-17 19:49:59,224 [INFO]   Val Loss: 0.000220
+2025-10-17 19:49:59,224 [INFO]   Val L2 Distance: 0.3059
+2025-10-17 19:49:59,224 [INFO]   Val Cosine Sim: 0.9782
+2025-10-17 19:49:59,224 [INFO]   Learning Rate: 0.000100
+2025-10-17 19:49:59,313 [INFO] New best model! Val loss: 0.0002
+2025-10-17 19:49:59,313 [INFO] 
+Epoch 3/50
+2025-10-17 19:49:59,851 [INFO] Batch 0: load=0.30s, train=0.24s
+2025-10-17 19:50:02,224 [INFO] Batch 10: load=0.00s, train=0.23s
+2025-10-17 19:50:04,597 [INFO] Batch 20: load=0.00s, train=0.24s
+2025-10-17 19:50:06,976 [INFO] Batch 30: load=0.00s, train=0.24s
+2025-10-17 19:50:09,345 [INFO] Batch 40: load=0.00s, train=0.24s
+2025-10-17 19:50:11,717 [INFO] Batch 50: load=0.00s, train=0.24s
+2025-10-17 19:50:14,085 [INFO] Batch 60: load=0.00s, train=0.24s
+2025-10-17 19:50:16,457 [INFO] Batch 70: load=0.00s, train=0.24s
+2025-10-17 19:50:18,829 [INFO] Batch 80: load=0.00s, train=0.23s
+2025-10-17 19:50:21,206 [INFO] Batch 90: load=0.00s, train=0.24s
+2025-10-17 19:50:23,462 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 19:50:30,717 [INFO] Epoch 3 Results:
+2025-10-17 19:50:30,718 [INFO]   Train Loss: 0.000262
+2025-10-17 19:50:30,718 [INFO]   Val Loss: 0.000142
+2025-10-17 19:50:30,718 [INFO]   Val L2 Distance: 0.2457
+2025-10-17 19:50:30,718 [INFO]   Val Cosine Sim: 0.9759
+2025-10-17 19:50:30,718 [INFO]   Learning Rate: 0.000099
+2025-10-17 19:50:30,812 [INFO] New best model! Val loss: 0.0001
+2025-10-17 19:50:30,812 [INFO] 
+Epoch 4/50
+2025-10-17 19:50:31,348 [INFO] Batch 0: load=0.30s, train=0.24s
+2025-10-17 19:50:33,725 [INFO] Batch 10: load=0.00s, train=0.24s
+2025-10-17 19:50:36,096 [INFO] Batch 20: load=0.00s, train=0.24s
+2025-10-17 19:50:38,471 [INFO] Batch 30: load=0.00s, train=0.24s
+2025-10-17 19:50:40,847 [INFO] Batch 40: load=0.00s, train=0.24s
+2025-10-17 19:50:43,217 [INFO] Batch 50: load=0.00s, train=0.24s
+2025-10-17 19:50:45,596 [INFO] Batch 60: load=0.00s, train=0.24s
+2025-10-17 19:50:47,967 [INFO] Batch 70: load=0.00s, train=0.24s
+2025-10-17 19:50:50,343 [INFO] Batch 80: load=0.00s, train=0.24s
+2025-10-17 19:50:52,717 [INFO] Batch 90: load=0.00s, train=0.24s
+2025-10-17 19:50:54,977 [INFO] Batch 100: load=0.00s, train=0.13s
+2025-10-17 19:51:02,261 [INFO] Epoch 4 Results:
+2025-10-17 19:51:02,262 [INFO]   Train Loss: 0.000170
+2025-10-17 19:51:02,262 [INFO]   Val Loss: 0.000102
+2025-10-17 19:51:02,262 [INFO]   Val L2 Distance: 0.2072
+2025-10-17 19:51:02,262 [INFO]   Val Cosine Sim: 0.9685
+2025-10-17 19:51:02,262 [INFO]   Learning Rate: 0.000098
+2025-10-17 19:51:02,346 [INFO] New best model! Val loss: 0.0001
+2025-10-17 19:51:02,346 [INFO] 
+Epoch 5/50
+2025-10-17 19:51:02,860 [INFO] Batch 0: load=0.27s, train=0.24s
+2025-10-17 19:51:05,231 [INFO] Batch 10: load=0.00s, train=0.24s
+2025-10-17 19:51:07,605 [INFO] Batch 20: load=0.00s, train=0.24s
+2025-10-17 19:51:09,979 [INFO] Batch 30: load=0.00s, train=0.24s
+2025-10-17 19:51:12,350 [INFO] Batch 40: load=0.00s, train=0.24s
+2025-10-17 19:51:14,723 [INFO] Batch 50: load=0.00s, train=0.24s
+2025-10-17 19:51:17,097 [INFO] Batch 60: load=0.00s, train=0.24s
+2025-10-17 19:51:19,470 [INFO] Batch 70: load=0.00s, train=0.24s
+2025-10-17 19:51:21,846 [INFO] Batch 80: load=0.00s, train=0.24s
+2025-10-17 19:51:24,217 [INFO] Batch 90: load=0.00s, train=0.24s
+2025-10-17 19:51:26,472 [INFO] Batch 100: load=0.00s, train=0.13s
+2025-10-17 19:51:33,804 [INFO] Epoch 5 Results:
+2025-10-17 19:51:33,804 [INFO]   Train Loss: 0.000121
+2025-10-17 19:51:33,804 [INFO]   Val Loss: 0.000083
+2025-10-17 19:51:33,804 [INFO]   Val L2 Distance: 0.1862
+2025-10-17 19:51:33,804 [INFO]   Val Cosine Sim: 0.9619
+2025-10-17 19:51:33,804 [INFO]   Learning Rate: 0.000098
+2025-10-17 19:51:33,874 [INFO] Saved checkpoint: results/part4/exp3_spatial_only_large/checkpoint_epoch_5.pth
+2025-10-17 19:51:33,957 [INFO] New best model! Val loss: 0.0001
+2025-10-17 19:51:33,957 [INFO] 
+Epoch 6/50
+2025-10-17 19:51:34,467 [INFO] Batch 0: load=0.27s, train=0.24s
+2025-10-17 19:51:36,838 [INFO] Batch 10: load=0.00s, train=0.24s
+2025-10-17 19:51:39,207 [INFO] Batch 20: load=0.00s, train=0.24s
+2025-10-17 19:51:41,582 [INFO] Batch 30: load=0.00s, train=0.24s
+2025-10-17 19:51:43,958 [INFO] Batch 40: load=0.00s, train=0.24s
+2025-10-17 19:51:46,329 [INFO] Batch 50: load=0.00s, train=0.24s
+2025-10-17 19:51:48,704 [INFO] Batch 60: load=0.00s, train=0.24s
+2025-10-17 19:51:51,073 [INFO] Batch 70: load=0.00s, train=0.24s
+2025-10-17 19:51:53,446 [INFO] Batch 80: load=0.00s, train=0.24s
+2025-10-17 19:51:55,827 [INFO] Batch 90: load=0.00s, train=0.24s
+2025-10-17 19:51:58,081 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 19:52:05,359 [INFO] Epoch 6 Results:
+2025-10-17 19:52:05,359 [INFO]   Train Loss: 0.000089
+2025-10-17 19:52:05,359 [INFO]   Val Loss: 0.000067
+2025-10-17 19:52:05,359 [INFO]   Val L2 Distance: 0.1671
+2025-10-17 19:52:05,360 [INFO]   Val Cosine Sim: 0.9554
+2025-10-17 19:52:05,360 [INFO]   Learning Rate: 0.000096
+2025-10-17 19:52:05,446 [INFO] New best model! Val loss: 0.0001
+2025-10-17 19:52:05,447 [INFO] 
+Epoch 7/50
+2025-10-17 19:52:05,969 [INFO] Batch 0: load=0.28s, train=0.24s
+2025-10-17 19:52:08,344 [INFO] Batch 10: load=0.00s, train=0.24s
+2025-10-17 19:52:10,715 [INFO] Batch 20: load=0.00s, train=0.24s
+2025-10-17 19:52:13,097 [INFO] Batch 30: load=0.00s, train=0.24s
+2025-10-17 19:52:15,482 [INFO] Batch 40: load=0.00s, train=0.24s
+2025-10-17 19:52:17,864 [INFO] Batch 50: load=0.00s, train=0.25s
+2025-10-17 19:52:20,286 [INFO] Batch 60: load=0.00s, train=0.24s
+2025-10-17 19:52:22,696 [INFO] Batch 70: load=0.00s, train=0.24s
+2025-10-17 19:52:25,069 [INFO] Batch 80: load=0.00s, train=0.24s
+2025-10-17 19:52:27,456 [INFO] Batch 90: load=0.00s, train=0.24s
+2025-10-17 19:52:29,691 [INFO] Batch 100: load=0.00s, train=0.13s
+2025-10-17 19:52:36,632 [INFO] Epoch 7 Results:
+2025-10-17 19:52:36,633 [INFO]   Train Loss: 0.000066
+2025-10-17 19:52:36,633 [INFO]   Val Loss: 0.000050
+2025-10-17 19:52:36,633 [INFO]   Val L2 Distance: 0.1451
+2025-10-17 19:52:36,633 [INFO]   Val Cosine Sim: 0.9514
+2025-10-17 19:52:36,633 [INFO]   Learning Rate: 0.000095
+2025-10-17 19:52:36,720 [INFO] New best model! Val loss: 0.0001
+2025-10-17 19:52:36,720 [INFO] 
+Epoch 8/50
+2025-10-17 19:52:37,284 [INFO] Batch 0: load=0.31s, train=0.26s
+2025-10-17 19:52:39,524 [INFO] Batch 10: load=0.00s, train=0.22s
+2025-10-17 19:52:41,759 [INFO] Batch 20: load=0.00s, train=0.22s
+2025-10-17 19:52:44,032 [INFO] Batch 30: load=0.00s, train=0.22s
+2025-10-17 19:52:46,265 [INFO] Batch 40: load=0.00s, train=0.22s
+2025-10-17 19:52:48,593 [INFO] Batch 50: load=0.00s, train=0.23s
+2025-10-17 19:52:50,952 [INFO] Batch 60: load=0.00s, train=0.24s
+2025-10-17 19:52:53,185 [INFO] Batch 70: load=0.00s, train=0.22s
+2025-10-17 19:52:55,425 [INFO] Batch 80: load=0.00s, train=0.22s
+2025-10-17 19:52:57,659 [INFO] Batch 90: load=0.00s, train=0.22s
+2025-10-17 19:52:59,801 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 19:53:06,695 [INFO] Epoch 8 Results:
+2025-10-17 19:53:06,695 [INFO]   Train Loss: 0.000054
+2025-10-17 19:53:06,695 [INFO]   Val Loss: 0.000042
+2025-10-17 19:53:06,695 [INFO]   Val L2 Distance: 0.1316
+2025-10-17 19:53:06,695 [INFO]   Val Cosine Sim: 0.9529
+2025-10-17 19:53:06,695 [INFO]   Learning Rate: 0.000094
+2025-10-17 19:53:06,782 [INFO] New best model! Val loss: 0.0000
+2025-10-17 19:53:06,782 [INFO] 
+Epoch 9/50
+2025-10-17 19:53:07,311 [INFO] Batch 0: load=0.30s, train=0.23s
+2025-10-17 19:53:09,567 [INFO] Batch 10: load=0.00s, train=0.22s
+2025-10-17 19:53:11,816 [INFO] Batch 20: load=0.00s, train=0.22s
+2025-10-17 19:53:14,057 [INFO] Batch 30: load=0.00s, train=0.22s
+2025-10-17 19:53:16,339 [INFO] Batch 40: load=0.00s, train=0.22s
+2025-10-17 19:53:18,614 [INFO] Batch 50: load=0.00s, train=0.24s
+2025-10-17 19:53:20,926 [INFO] Batch 60: load=0.00s, train=0.22s
+2025-10-17 19:53:23,230 [INFO] Batch 70: load=0.00s, train=0.22s
+2025-10-17 19:53:25,516 [INFO] Batch 80: load=0.00s, train=0.22s
+2025-10-17 19:53:27,825 [INFO] Batch 90: load=0.00s, train=0.23s
+2025-10-17 19:53:30,086 [INFO] Batch 100: load=0.00s, train=0.13s
+2025-10-17 19:53:37,441 [INFO] Epoch 9 Results:
+2025-10-17 19:53:37,441 [INFO]   Train Loss: 0.000045
+2025-10-17 19:53:37,441 [INFO]   Val Loss: 0.000033
+2025-10-17 19:53:37,441 [INFO]   Val L2 Distance: 0.1171
+2025-10-17 19:53:37,441 [INFO]   Val Cosine Sim: 0.9524
+2025-10-17 19:53:37,441 [INFO]   Learning Rate: 0.000092
+2025-10-17 19:53:37,537 [INFO] New best model! Val loss: 0.0000
+2025-10-17 19:53:37,537 [INFO] 
+Epoch 10/50
+2025-10-17 19:53:38,051 [INFO] Batch 0: load=0.26s, train=0.26s
+2025-10-17 19:53:40,442 [INFO] Batch 10: load=0.00s, train=0.23s
+2025-10-17 19:53:42,819 [INFO] Batch 20: load=0.00s, train=0.23s
+2025-10-17 19:53:45,195 [INFO] Batch 30: load=0.00s, train=0.23s
+2025-10-17 19:53:47,553 [INFO] Batch 40: load=0.00s, train=0.24s
+2025-10-17 19:53:49,814 [INFO] Batch 50: load=0.00s, train=0.22s
+2025-10-17 19:53:52,048 [INFO] Batch 60: load=0.00s, train=0.22s
+2025-10-17 19:53:54,301 [INFO] Batch 70: load=0.00s, train=0.22s
+2025-10-17 19:53:56,534 [INFO] Batch 80: load=0.00s, train=0.22s
+2025-10-17 19:53:58,767 [INFO] Batch 90: load=0.00s, train=0.22s
+2025-10-17 19:54:00,941 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 19:54:08,255 [INFO] Epoch 10 Results:
+2025-10-17 19:54:08,255 [INFO]   Train Loss: 0.000036
+2025-10-17 19:54:08,255 [INFO]   Val Loss: 0.000026
+2025-10-17 19:54:08,255 [INFO]   Val L2 Distance: 0.1050
+2025-10-17 19:54:08,255 [INFO]   Val Cosine Sim: 0.9547
+2025-10-17 19:54:08,255 [INFO]   Learning Rate: 0.000090
+2025-10-17 19:54:08,325 [INFO] Saved checkpoint: results/part4/exp3_spatial_only_large/checkpoint_epoch_10.pth
+2025-10-17 19:54:08,402 [INFO] New best model! Val loss: 0.0000
+2025-10-17 19:54:08,402 [INFO] 
+Epoch 11/50
+2025-10-17 19:54:08,930 [INFO] Batch 0: load=0.29s, train=0.24s
+2025-10-17 19:54:11,287 [INFO] Batch 10: load=0.00s, train=0.23s
+2025-10-17 19:54:13,656 [INFO] Batch 20: load=0.00s, train=0.24s
+2025-10-17 19:54:15,927 [INFO] Batch 30: load=0.00s, train=0.22s
+2025-10-17 19:54:18,184 [INFO] Batch 40: load=0.00s, train=0.22s
+2025-10-17 19:54:20,447 [INFO] Batch 50: load=0.00s, train=0.22s
+2025-10-17 19:54:22,681 [INFO] Batch 60: load=0.00s, train=0.22s
+2025-10-17 19:54:24,990 [INFO] Batch 70: load=0.00s, train=0.25s
+2025-10-17 19:54:27,270 [INFO] Batch 80: load=0.00s, train=0.22s
+2025-10-17 19:54:29,502 [INFO] Batch 90: load=0.00s, train=0.22s
+2025-10-17 19:54:31,631 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 19:54:38,576 [INFO] Epoch 11 Results:
+2025-10-17 19:54:38,577 [INFO]   Train Loss: 0.000031
+2025-10-17 19:54:38,577 [INFO]   Val Loss: 0.000023
+2025-10-17 19:54:38,577 [INFO]   Val L2 Distance: 0.0985
+2025-10-17 19:54:38,577 [INFO]   Val Cosine Sim: 0.9548
+2025-10-17 19:54:38,577 [INFO]   Learning Rate: 0.000089
+2025-10-17 19:54:38,658 [INFO] New best model! Val loss: 0.0000
+2025-10-17 19:54:38,658 [INFO] 
+Epoch 12/50
+2025-10-17 19:54:39,144 [INFO] Batch 0: load=0.26s, train=0.23s
+2025-10-17 19:54:41,378 [INFO] Batch 10: load=0.00s, train=0.22s
+2025-10-17 19:54:43,636 [INFO] Batch 20: load=0.00s, train=0.23s
+2025-10-17 19:54:45,870 [INFO] Batch 30: load=0.00s, train=0.22s
+2025-10-17 19:54:48,102 [INFO] Batch 40: load=0.00s, train=0.22s
+2025-10-17 19:54:50,373 [INFO] Batch 50: load=0.00s, train=0.22s
+2025-10-17 19:54:52,736 [INFO] Batch 60: load=0.00s, train=0.24s
+2025-10-17 19:54:55,100 [INFO] Batch 70: load=0.00s, train=0.24s
+2025-10-17 19:54:57,351 [INFO] Batch 80: load=0.00s, train=0.24s
+2025-10-17 19:54:59,755 [INFO] Batch 90: load=0.00s, train=0.24s
+2025-10-17 19:55:02,024 [INFO] Batch 100: load=0.00s, train=0.13s
+2025-10-17 19:55:09,302 [INFO] Epoch 12 Results:
+2025-10-17 19:55:09,303 [INFO]   Train Loss: 0.000026
+2025-10-17 19:55:09,303 [INFO]   Val Loss: 0.000019
+2025-10-17 19:55:09,303 [INFO]   Val L2 Distance: 0.0883
+2025-10-17 19:55:09,303 [INFO]   Val Cosine Sim: 0.9566
+2025-10-17 19:55:09,303 [INFO]   Learning Rate: 0.000086
+2025-10-17 19:55:09,386 [INFO] New best model! Val loss: 0.0000
+2025-10-17 19:55:09,386 [INFO] 
+Epoch 13/50
+2025-10-17 19:55:09,887 [INFO] Batch 0: load=0.26s, train=0.24s
+2025-10-17 19:55:12,211 [INFO] Batch 10: load=0.00s, train=0.24s
+2025-10-17 19:55:14,522 [INFO] Batch 20: load=0.00s, train=0.22s
+2025-10-17 19:55:16,780 [INFO] Batch 30: load=0.00s, train=0.22s
+2025-10-17 19:55:19,104 [INFO] Batch 40: load=0.00s, train=0.24s
+2025-10-17 19:55:21,395 [INFO] Batch 50: load=0.00s, train=0.22s
+2025-10-17 19:55:23,627 [INFO] Batch 60: load=0.00s, train=0.22s
+2025-10-17 19:55:25,954 [INFO] Batch 70: load=0.00s, train=0.24s
+2025-10-17 19:55:28,317 [INFO] Batch 80: load=0.00s, train=0.23s
+2025-10-17 19:55:30,652 [INFO] Batch 90: load=0.00s, train=0.23s
+2025-10-17 19:55:32,883 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 19:55:40,006 [INFO] Epoch 13 Results:
+2025-10-17 19:55:40,006 [INFO]   Train Loss: 0.000022
+2025-10-17 19:55:40,006 [INFO]   Val Loss: 0.000019
+2025-10-17 19:55:40,006 [INFO]   Val L2 Distance: 0.0886
+2025-10-17 19:55:40,006 [INFO]   Val Cosine Sim: 0.9463
+2025-10-17 19:55:40,006 [INFO]   Learning Rate: 0.000084
+2025-10-17 19:55:40,006 [INFO] 
+Epoch 14/50
+2025-10-17 19:55:40,515 [INFO] Batch 0: load=0.27s, train=0.24s
+2025-10-17 19:55:42,853 [INFO] Batch 10: load=0.00s, train=0.23s
+2025-10-17 19:55:45,190 [INFO] Batch 20: load=0.00s, train=0.24s
+2025-10-17 19:55:47,472 [INFO] Batch 30: load=0.00s, train=0.22s
+2025-10-17 19:55:49,717 [INFO] Batch 40: load=0.00s, train=0.24s
+2025-10-17 19:55:52,092 [INFO] Batch 50: load=0.00s, train=0.24s
+2025-10-17 19:55:54,517 [INFO] Batch 60: load=0.00s, train=0.23s
+2025-10-17 19:55:56,934 [INFO] Batch 70: load=0.00s, train=0.24s
+2025-10-17 19:55:59,295 [INFO] Batch 80: load=0.00s, train=0.23s
+2025-10-17 19:56:01,621 [INFO] Batch 90: load=0.00s, train=0.22s
+2025-10-17 19:56:03,794 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 19:56:10,777 [INFO] Epoch 14 Results:
+2025-10-17 19:56:10,777 [INFO]   Train Loss: 0.000019
+2025-10-17 19:56:10,777 [INFO]   Val Loss: 0.000015
+2025-10-17 19:56:10,777 [INFO]   Val L2 Distance: 0.0785
+2025-10-17 19:56:10,777 [INFO]   Val Cosine Sim: 0.9529
+2025-10-17 19:56:10,777 [INFO]   Learning Rate: 0.000082
+2025-10-17 19:56:10,867 [INFO] New best model! Val loss: 0.0000
+2025-10-17 19:56:10,867 [INFO] 
+Epoch 15/50
+2025-10-17 19:56:11,415 [INFO] Batch 0: load=0.31s, train=0.24s
+2025-10-17 19:56:13,696 [INFO] Batch 10: load=0.00s, train=0.24s
+2025-10-17 19:56:16,100 [INFO] Batch 20: load=0.00s, train=0.24s
+2025-10-17 19:56:18,480 [INFO] Batch 30: load=0.00s, train=0.23s
+2025-10-17 19:56:20,831 [INFO] Batch 40: load=0.00s, train=0.23s
+2025-10-17 19:56:23,183 [INFO] Batch 50: load=0.00s, train=0.22s
+2025-10-17 19:56:25,596 [INFO] Batch 60: load=0.00s, train=0.24s
+2025-10-17 19:56:27,987 [INFO] Batch 70: load=0.00s, train=0.23s
+2025-10-17 19:56:30,325 [INFO] Batch 80: load=0.00s, train=0.23s
+2025-10-17 19:56:32,660 [INFO] Batch 90: load=0.00s, train=0.24s
+2025-10-17 19:56:34,879 [INFO] Batch 100: load=0.00s, train=0.13s
+2025-10-17 19:56:41,885 [INFO] Epoch 15 Results:
+2025-10-17 19:56:41,885 [INFO]   Train Loss: 0.000016
+2025-10-17 19:56:41,885 [INFO]   Val Loss: 0.000012
+2025-10-17 19:56:41,885 [INFO]   Val L2 Distance: 0.0715
+2025-10-17 19:56:41,885 [INFO]   Val Cosine Sim: 0.9520
+2025-10-17 19:56:41,885 [INFO]   Learning Rate: 0.000079
+2025-10-17 19:56:41,962 [INFO] Saved checkpoint: results/part4/exp3_spatial_only_large/checkpoint_epoch_15.pth
+2025-10-17 19:56:42,051 [INFO] New best model! Val loss: 0.0000
+2025-10-17 19:56:42,051 [INFO] 
+Epoch 16/50
+2025-10-17 19:56:42,536 [INFO] Batch 0: load=0.26s, train=0.23s
+2025-10-17 19:56:44,826 [INFO] Batch 10: load=0.00s, train=0.22s
+2025-10-17 19:56:47,061 [INFO] Batch 20: load=0.00s, train=0.22s
+2025-10-17 19:56:49,319 [INFO] Batch 30: load=0.00s, train=0.22s
+2025-10-17 19:56:51,618 [INFO] Batch 40: load=0.00s, train=0.25s
+2025-10-17 19:56:53,853 [INFO] Batch 50: load=0.00s, train=0.23s
+2025-10-17 19:56:56,194 [INFO] Batch 60: load=0.00s, train=0.24s
+2025-10-17 19:56:58,458 [INFO] Batch 70: load=0.00s, train=0.22s
+2025-10-17 19:57:00,686 [INFO] Batch 80: load=0.00s, train=0.22s
+2025-10-17 19:57:03,037 [INFO] Batch 90: load=0.00s, train=0.23s
+2025-10-17 19:57:05,303 [INFO] Batch 100: load=0.00s, train=0.13s
+2025-10-17 19:57:12,579 [INFO] Epoch 16 Results:
+2025-10-17 19:57:12,579 [INFO]   Train Loss: 0.000014
+2025-10-17 19:57:12,579 [INFO]   Val Loss: 0.000009
+2025-10-17 19:57:12,579 [INFO]   Val L2 Distance: 0.0610
+2025-10-17 19:57:12,579 [INFO]   Val Cosine Sim: 0.9604
+2025-10-17 19:57:12,579 [INFO]   Learning Rate: 0.000077
+2025-10-17 19:57:12,661 [INFO] New best model! Val loss: 0.0000
+2025-10-17 19:57:12,662 [INFO] 
+Epoch 17/50
+2025-10-17 19:57:13,199 [INFO] Batch 0: load=0.30s, train=0.23s
+2025-10-17 19:57:15,520 [INFO] Batch 10: load=0.00s, train=0.22s
+2025-10-17 19:57:17,835 [INFO] Batch 20: load=0.00s, train=0.24s
+2025-10-17 19:57:20,138 [INFO] Batch 30: load=0.00s, train=0.22s
+2025-10-17 19:57:22,457 [INFO] Batch 40: load=0.00s, train=0.22s
+2025-10-17 19:57:24,692 [INFO] Batch 50: load=0.00s, train=0.22s
+2025-10-17 19:57:26,923 [INFO] Batch 60: load=0.00s, train=0.22s
+2025-10-17 19:57:29,181 [INFO] Batch 70: load=0.00s, train=0.22s
+2025-10-17 19:57:31,499 [INFO] Batch 80: load=0.00s, train=0.22s
+2025-10-17 19:57:33,838 [INFO] Batch 90: load=0.00s, train=0.24s
+2025-10-17 19:57:36,015 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 19:57:43,313 [INFO] Epoch 17 Results:
+2025-10-17 19:57:43,313 [INFO]   Train Loss: 0.000012
+2025-10-17 19:57:43,313 [INFO]   Val Loss: 0.000010
+2025-10-17 19:57:43,313 [INFO]   Val L2 Distance: 0.0652
+2025-10-17 19:57:43,313 [INFO]   Val Cosine Sim: 0.9496
+2025-10-17 19:57:43,313 [INFO]   Learning Rate: 0.000074
+2025-10-17 19:57:43,313 [INFO] 
+Epoch 18/50
+2025-10-17 19:57:43,874 [INFO] Batch 0: load=0.32s, train=0.24s
+2025-10-17 19:57:46,240 [INFO] Batch 10: load=0.00s, train=0.24s
+2025-10-17 19:57:48,694 [INFO] Batch 20: load=0.00s, train=0.25s
+2025-10-17 19:57:51,069 [INFO] Batch 30: load=0.00s, train=0.23s
+2025-10-17 19:57:53,312 [INFO] Batch 40: load=0.00s, train=0.22s
+2025-10-17 19:57:55,655 [INFO] Batch 50: load=0.00s, train=0.25s
+2025-10-17 19:57:58,011 [INFO] Batch 60: load=0.00s, train=0.23s
+2025-10-17 19:58:00,348 [INFO] Batch 70: load=0.00s, train=0.23s
+2025-10-17 19:58:02,695 [INFO] Batch 80: load=0.00s, train=0.24s
+2025-10-17 19:58:05,087 [INFO] Batch 90: load=0.00s, train=0.23s
+2025-10-17 19:58:07,318 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 19:58:14,275 [INFO] Epoch 18 Results:
+2025-10-17 19:58:14,275 [INFO]   Train Loss: 0.000011
+2025-10-17 19:58:14,275 [INFO]   Val Loss: 0.000010
+2025-10-17 19:58:14,275 [INFO]   Val L2 Distance: 0.0639
+2025-10-17 19:58:14,275 [INFO]   Val Cosine Sim: 0.9455
+2025-10-17 19:58:14,275 [INFO]   Learning Rate: 0.000071
+2025-10-17 19:58:14,275 [INFO] 
+Epoch 19/50
+2025-10-17 19:58:14,848 [INFO] Batch 0: load=0.33s, train=0.24s
+2025-10-17 19:58:17,254 [INFO] Batch 10: load=0.00s, train=0.25s
+2025-10-17 19:58:19,557 [INFO] Batch 20: load=0.00s, train=0.23s
+2025-10-17 19:58:21,906 [INFO] Batch 30: load=0.00s, train=0.24s
+2025-10-17 19:58:24,267 [INFO] Batch 40: load=0.00s, train=0.23s
+2025-10-17 19:58:26,680 [INFO] Batch 50: load=0.00s, train=0.23s
+2025-10-17 19:58:29,074 [INFO] Batch 60: load=0.00s, train=0.24s
+2025-10-17 19:58:31,483 [INFO] Batch 70: load=0.00s, train=0.24s
+2025-10-17 19:58:33,908 [INFO] Batch 80: load=0.00s, train=0.24s
+2025-10-17 19:58:36,356 [INFO] Batch 90: load=0.00s, train=0.25s
+2025-10-17 19:58:38,680 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 19:58:45,767 [INFO] Epoch 19 Results:
+2025-10-17 19:58:45,768 [INFO]   Train Loss: 0.000010
+2025-10-17 19:58:45,768 [INFO]   Val Loss: 0.000008
+2025-10-17 19:58:45,768 [INFO]   Val L2 Distance: 0.0568
+2025-10-17 19:58:45,768 [INFO]   Val Cosine Sim: 0.9500
+2025-10-17 19:58:45,768 [INFO]   Learning Rate: 0.000068
+2025-10-17 19:58:45,853 [INFO] New best model! Val loss: 0.0000
+2025-10-17 19:58:45,854 [INFO] 
+Epoch 20/50
+2025-10-17 19:58:46,360 [INFO] Batch 0: load=0.28s, train=0.23s
+2025-10-17 19:58:48,594 [INFO] Batch 10: load=0.00s, train=0.22s
+2025-10-17 19:58:50,822 [INFO] Batch 20: load=0.00s, train=0.22s
+2025-10-17 19:58:53,053 [INFO] Batch 30: load=0.00s, train=0.22s
+2025-10-17 19:58:55,281 [INFO] Batch 40: load=0.00s, train=0.22s
+2025-10-17 19:58:57,511 [INFO] Batch 50: load=0.00s, train=0.22s
+2025-10-17 19:58:59,742 [INFO] Batch 60: load=0.00s, train=0.22s
+2025-10-17 19:59:01,974 [INFO] Batch 70: load=0.00s, train=0.22s
+2025-10-17 19:59:04,202 [INFO] Batch 80: load=0.00s, train=0.22s
+2025-10-17 19:59:06,434 [INFO] Batch 90: load=0.00s, train=0.22s
+2025-10-17 19:59:08,555 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 19:59:15,417 [INFO] Epoch 20 Results:
+2025-10-17 19:59:15,417 [INFO]   Train Loss: 0.000009
+2025-10-17 19:59:15,417 [INFO]   Val Loss: 0.000008
+2025-10-17 19:59:15,417 [INFO]   Val L2 Distance: 0.0571
+2025-10-17 19:59:15,417 [INFO]   Val Cosine Sim: 0.9432
+2025-10-17 19:59:15,417 [INFO]   Learning Rate: 0.000065
+2025-10-17 19:59:15,487 [INFO] Saved checkpoint: results/part4/exp3_spatial_only_large/checkpoint_epoch_20.pth
+2025-10-17 19:59:15,487 [INFO] 
+Epoch 21/50
+2025-10-17 19:59:15,979 [INFO] Batch 0: load=0.26s, train=0.23s
+2025-10-17 19:59:18,207 [INFO] Batch 10: load=0.00s, train=0.22s
+2025-10-17 19:59:20,437 [INFO] Batch 20: load=0.00s, train=0.22s
+2025-10-17 19:59:22,668 [INFO] Batch 30: load=0.00s, train=0.22s
+2025-10-17 19:59:24,897 [INFO] Batch 40: load=0.00s, train=0.22s
+2025-10-17 19:59:27,129 [INFO] Batch 50: load=0.00s, train=0.22s
+2025-10-17 19:59:29,358 [INFO] Batch 60: load=0.00s, train=0.22s
+2025-10-17 19:59:31,590 [INFO] Batch 70: load=0.00s, train=0.22s
+2025-10-17 19:59:33,819 [INFO] Batch 80: load=0.00s, train=0.22s
+2025-10-17 19:59:36,048 [INFO] Batch 90: load=0.00s, train=0.22s
+2025-10-17 19:59:38,172 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 19:59:45,042 [INFO] Epoch 21 Results:
+2025-10-17 19:59:45,043 [INFO]   Train Loss: 0.000008
+2025-10-17 19:59:45,043 [INFO]   Val Loss: 0.000006
+2025-10-17 19:59:45,043 [INFO]   Val L2 Distance: 0.0500
+2025-10-17 19:59:45,043 [INFO]   Val Cosine Sim: 0.9528
+2025-10-17 19:59:45,043 [INFO]   Learning Rate: 0.000062
+2025-10-17 19:59:45,125 [INFO] New best model! Val loss: 0.0000
+2025-10-17 19:59:45,125 [INFO] 
+Epoch 22/50
+2025-10-17 19:59:45,638 [INFO] Batch 0: load=0.29s, train=0.23s
+2025-10-17 19:59:47,872 [INFO] Batch 10: load=0.00s, train=0.22s
+2025-10-17 19:59:50,104 [INFO] Batch 20: load=0.00s, train=0.22s
+2025-10-17 19:59:52,335 [INFO] Batch 30: load=0.00s, train=0.22s
+2025-10-17 19:59:54,594 [INFO] Batch 40: load=0.00s, train=0.23s
+2025-10-17 19:59:56,907 [INFO] Batch 50: load=0.00s, train=0.23s
+2025-10-17 19:59:59,213 [INFO] Batch 60: load=0.00s, train=0.22s
+2025-10-17 20:00:01,444 [INFO] Batch 70: load=0.00s, train=0.22s
+2025-10-17 20:00:03,793 [INFO] Batch 80: load=0.00s, train=0.24s
+2025-10-17 20:00:06,046 [INFO] Batch 90: load=0.00s, train=0.23s
+2025-10-17 20:00:08,199 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 20:00:15,234 [INFO] Epoch 22 Results:
+2025-10-17 20:00:15,235 [INFO]   Train Loss: 0.000007
+2025-10-17 20:00:15,235 [INFO]   Val Loss: 0.000005
+2025-10-17 20:00:15,235 [INFO]   Val L2 Distance: 0.0474
+2025-10-17 20:00:15,235 [INFO]   Val Cosine Sim: 0.9507
+2025-10-17 20:00:15,235 [INFO]   Learning Rate: 0.000059
+2025-10-17 20:00:15,327 [INFO] New best model! Val loss: 0.0000
+2025-10-17 20:00:15,327 [INFO] 
+Epoch 23/50
+2025-10-17 20:00:15,801 [INFO] Batch 0: load=0.24s, train=0.23s
+2025-10-17 20:00:18,046 [INFO] Batch 10: load=0.00s, train=0.22s
+2025-10-17 20:00:20,300 [INFO] Batch 20: load=0.00s, train=0.23s
+2025-10-17 20:00:22,563 [INFO] Batch 30: load=0.00s, train=0.23s
+2025-10-17 20:00:24,822 [INFO] Batch 40: load=0.00s, train=0.23s
+2025-10-17 20:00:27,065 [INFO] Batch 50: load=0.00s, train=0.22s
+2025-10-17 20:00:29,295 [INFO] Batch 60: load=0.00s, train=0.22s
+2025-10-17 20:00:31,524 [INFO] Batch 70: load=0.00s, train=0.22s
+2025-10-17 20:00:33,753 [INFO] Batch 80: load=0.00s, train=0.22s
+2025-10-17 20:00:35,984 [INFO] Batch 90: load=0.00s, train=0.22s
+2025-10-17 20:00:38,113 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 20:00:45,050 [INFO] Epoch 23 Results:
+2025-10-17 20:00:45,051 [INFO]   Train Loss: 0.000006
+2025-10-17 20:00:45,051 [INFO]   Val Loss: 0.000005
+2025-10-17 20:00:45,051 [INFO]   Val L2 Distance: 0.0451
+2025-10-17 20:00:45,051 [INFO]   Val Cosine Sim: 0.9526
+2025-10-17 20:00:45,051 [INFO]   Learning Rate: 0.000056
+2025-10-17 20:00:45,127 [INFO] New best model! Val loss: 0.0000
+2025-10-17 20:00:45,127 [INFO] 
+Epoch 24/50
+2025-10-17 20:00:45,612 [INFO] Batch 0: load=0.25s, train=0.23s
+2025-10-17 20:00:47,862 [INFO] Batch 10: load=0.00s, train=0.22s
+2025-10-17 20:00:50,125 [INFO] Batch 20: load=0.00s, train=0.22s
+2025-10-17 20:00:52,478 [INFO] Batch 30: load=0.00s, train=0.22s
+2025-10-17 20:00:54,723 [INFO] Batch 40: load=0.00s, train=0.22s
+2025-10-17 20:00:57,052 [INFO] Batch 50: load=0.00s, train=0.22s
+2025-10-17 20:00:59,286 [INFO] Batch 60: load=0.00s, train=0.22s
+2025-10-17 20:01:01,519 [INFO] Batch 70: load=0.00s, train=0.22s
+2025-10-17 20:01:03,754 [INFO] Batch 80: load=0.00s, train=0.22s
+2025-10-17 20:01:06,045 [INFO] Batch 90: load=0.00s, train=0.23s
+2025-10-17 20:01:08,202 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 20:01:15,107 [INFO] Epoch 24 Results:
+2025-10-17 20:01:15,107 [INFO]   Train Loss: 0.000006
+2025-10-17 20:01:15,107 [INFO]   Val Loss: 0.000005
+2025-10-17 20:01:15,107 [INFO]   Val L2 Distance: 0.0449
+2025-10-17 20:01:15,107 [INFO]   Val Cosine Sim: 0.9467
+2025-10-17 20:01:15,107 [INFO]   Learning Rate: 0.000053
+2025-10-17 20:01:15,192 [INFO] New best model! Val loss: 0.0000
+2025-10-17 20:01:15,192 [INFO] 
+Epoch 25/50
+2025-10-17 20:01:15,673 [INFO] Batch 0: load=0.25s, train=0.23s
+2025-10-17 20:01:17,912 [INFO] Batch 10: load=0.00s, train=0.22s
+2025-10-17 20:01:20,147 [INFO] Batch 20: load=0.00s, train=0.22s
+2025-10-17 20:01:22,382 [INFO] Batch 30: load=0.00s, train=0.22s
+2025-10-17 20:01:24,617 [INFO] Batch 40: load=0.00s, train=0.22s
+2025-10-17 20:01:26,851 [INFO] Batch 50: load=0.00s, train=0.22s
+2025-10-17 20:01:29,088 [INFO] Batch 60: load=0.00s, train=0.22s
+2025-10-17 20:01:31,324 [INFO] Batch 70: load=0.00s, train=0.22s
+2025-10-17 20:01:33,558 [INFO] Batch 80: load=0.00s, train=0.22s
+2025-10-17 20:01:35,795 [INFO] Batch 90: load=0.00s, train=0.22s
+2025-10-17 20:01:37,923 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 20:01:44,849 [INFO] Epoch 25 Results:
+2025-10-17 20:01:44,849 [INFO]   Train Loss: 0.000005
+2025-10-17 20:01:44,849 [INFO]   Val Loss: 0.000005
+2025-10-17 20:01:44,849 [INFO]   Val L2 Distance: 0.0459
+2025-10-17 20:01:44,849 [INFO]   Val Cosine Sim: 0.9396
+2025-10-17 20:01:44,849 [INFO]   Learning Rate: 0.000050
+2025-10-17 20:01:44,925 [INFO] Saved checkpoint: results/part4/exp3_spatial_only_large/checkpoint_epoch_25.pth
+2025-10-17 20:01:44,925 [INFO] 
+Epoch 26/50
+2025-10-17 20:01:45,416 [INFO] Batch 0: load=0.26s, train=0.23s
+2025-10-17 20:01:47,651 [INFO] Batch 10: load=0.00s, train=0.22s
+2025-10-17 20:01:49,890 [INFO] Batch 20: load=0.00s, train=0.22s
+2025-10-17 20:01:52,129 [INFO] Batch 30: load=0.00s, train=0.22s
+2025-10-17 20:01:54,366 [INFO] Batch 40: load=0.00s, train=0.22s
+2025-10-17 20:01:56,604 [INFO] Batch 50: load=0.00s, train=0.22s
+2025-10-17 20:01:58,841 [INFO] Batch 60: load=0.00s, train=0.22s
+2025-10-17 20:02:01,075 [INFO] Batch 70: load=0.00s, train=0.22s
+2025-10-17 20:02:03,336 [INFO] Batch 80: load=0.00s, train=0.22s
+2025-10-17 20:02:05,574 [INFO] Batch 90: load=0.00s, train=0.22s
+2025-10-17 20:02:07,701 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 20:02:14,673 [INFO] Epoch 26 Results:
+2025-10-17 20:02:14,674 [INFO]   Train Loss: 0.000005
+2025-10-17 20:02:14,674 [INFO]   Val Loss: 0.000004
+2025-10-17 20:02:14,674 [INFO]   Val L2 Distance: 0.0405
+2025-10-17 20:02:14,674 [INFO]   Val Cosine Sim: 0.9471
+2025-10-17 20:02:14,674 [INFO]   Learning Rate: 0.000047
+2025-10-17 20:02:14,759 [INFO] New best model! Val loss: 0.0000
+2025-10-17 20:02:14,759 [INFO] 
+Epoch 27/50
+2025-10-17 20:02:15,256 [INFO] Batch 0: load=0.26s, train=0.23s
+2025-10-17 20:02:17,567 [INFO] Batch 10: load=0.00s, train=0.23s
+2025-10-17 20:02:19,839 [INFO] Batch 20: load=0.00s, train=0.22s
+2025-10-17 20:02:22,080 [INFO] Batch 30: load=0.00s, train=0.23s
+2025-10-17 20:02:24,472 [INFO] Batch 40: load=0.00s, train=0.24s
+2025-10-17 20:02:26,860 [INFO] Batch 50: load=0.00s, train=0.24s
+2025-10-17 20:02:29,241 [INFO] Batch 60: load=0.00s, train=0.24s
+2025-10-17 20:02:31,618 [INFO] Batch 70: load=0.00s, train=0.24s
+2025-10-17 20:02:33,985 [INFO] Batch 80: load=0.00s, train=0.24s
+2025-10-17 20:02:36,268 [INFO] Batch 90: load=0.00s, train=0.23s
+2025-10-17 20:02:38,516 [INFO] Batch 100: load=0.00s, train=0.13s
+2025-10-17 20:02:45,518 [INFO] Epoch 27 Results:
+2025-10-17 20:02:45,518 [INFO]   Train Loss: 0.000004
+2025-10-17 20:02:45,518 [INFO]   Val Loss: 0.000004
+2025-10-17 20:02:45,518 [INFO]   Val L2 Distance: 0.0396
+2025-10-17 20:02:45,518 [INFO]   Val Cosine Sim: 0.9506
+2025-10-17 20:02:45,518 [INFO]   Learning Rate: 0.000044
+2025-10-17 20:02:45,601 [INFO] New best model! Val loss: 0.0000
+2025-10-17 20:02:45,601 [INFO] 
+Epoch 28/50
+2025-10-17 20:02:46,095 [INFO] Batch 0: load=0.27s, train=0.23s
+2025-10-17 20:02:48,382 [INFO] Batch 10: load=0.00s, train=0.22s
+2025-10-17 20:02:50,639 [INFO] Batch 20: load=0.00s, train=0.22s
+2025-10-17 20:02:52,869 [INFO] Batch 30: load=0.00s, train=0.22s
+2025-10-17 20:02:55,100 [INFO] Batch 40: load=0.00s, train=0.22s
+2025-10-17 20:02:57,333 [INFO] Batch 50: load=0.00s, train=0.22s
+2025-10-17 20:02:59,566 [INFO] Batch 60: load=0.00s, train=0.22s
+2025-10-17 20:03:01,795 [INFO] Batch 70: load=0.00s, train=0.22s
+2025-10-17 20:03:04,024 [INFO] Batch 80: load=0.00s, train=0.22s
+2025-10-17 20:03:06,310 [INFO] Batch 90: load=0.00s, train=0.23s
+2025-10-17 20:03:08,436 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 20:03:15,342 [INFO] Epoch 28 Results:
+2025-10-17 20:03:15,342 [INFO]   Train Loss: 0.000004
+2025-10-17 20:03:15,342 [INFO]   Val Loss: 0.000004
+2025-10-17 20:03:15,342 [INFO]   Val L2 Distance: 0.0391
+2025-10-17 20:03:15,342 [INFO]   Val Cosine Sim: 0.9443
+2025-10-17 20:03:15,343 [INFO]   Learning Rate: 0.000041
+2025-10-17 20:03:15,424 [INFO] New best model! Val loss: 0.0000
+2025-10-17 20:03:15,424 [INFO] 
+Epoch 29/50
+2025-10-17 20:03:15,890 [INFO] Batch 0: load=0.24s, train=0.23s
+2025-10-17 20:03:18,119 [INFO] Batch 10: load=0.00s, train=0.22s
+2025-10-17 20:03:20,377 [INFO] Batch 20: load=0.00s, train=0.22s
+2025-10-17 20:03:22,694 [INFO] Batch 30: load=0.00s, train=0.22s
+2025-10-17 20:03:24,972 [INFO] Batch 40: load=0.00s, train=0.22s
+2025-10-17 20:03:27,227 [INFO] Batch 50: load=0.00s, train=0.22s
+2025-10-17 20:03:29,497 [INFO] Batch 60: load=0.00s, train=0.22s
+2025-10-17 20:03:31,831 [INFO] Batch 70: load=0.00s, train=0.22s
+2025-10-17 20:03:34,138 [INFO] Batch 80: load=0.00s, train=0.22s
+2025-10-17 20:03:36,459 [INFO] Batch 90: load=0.00s, train=0.24s
+2025-10-17 20:03:38,763 [INFO] Batch 100: load=0.00s, train=0.13s
+2025-10-17 20:03:46,088 [INFO] Epoch 29 Results:
+2025-10-17 20:03:46,088 [INFO]   Train Loss: 0.000004
+2025-10-17 20:03:46,088 [INFO]   Val Loss: 0.000003
+2025-10-17 20:03:46,088 [INFO]   Val L2 Distance: 0.0352
+2025-10-17 20:03:46,088 [INFO]   Val Cosine Sim: 0.9480
+2025-10-17 20:03:46,088 [INFO]   Learning Rate: 0.000038
+2025-10-17 20:03:46,202 [INFO] New best model! Val loss: 0.0000
+2025-10-17 20:03:46,202 [INFO] 
+Epoch 30/50
+2025-10-17 20:03:46,772 [INFO] Batch 0: load=0.32s, train=0.25s
+2025-10-17 20:03:49,093 [INFO] Batch 10: load=0.00s, train=0.25s
+2025-10-17 20:03:51,523 [INFO] Batch 20: load=0.00s, train=0.25s
+2025-10-17 20:03:53,909 [INFO] Batch 30: load=0.00s, train=0.24s
+2025-10-17 20:03:56,246 [INFO] Batch 40: load=0.00s, train=0.23s
+2025-10-17 20:03:58,648 [INFO] Batch 50: load=0.00s, train=0.24s
+2025-10-17 20:04:01,021 [INFO] Batch 60: load=0.00s, train=0.22s
+2025-10-17 20:04:03,309 [INFO] Batch 70: load=0.00s, train=0.22s
+2025-10-17 20:04:05,581 [INFO] Batch 80: load=0.00s, train=0.22s
+2025-10-17 20:04:07,834 [INFO] Batch 90: load=0.00s, train=0.22s
+2025-10-17 20:04:10,047 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 20:04:17,010 [INFO] Epoch 30 Results:
+2025-10-17 20:04:17,010 [INFO]   Train Loss: 0.000003
+2025-10-17 20:04:17,010 [INFO]   Val Loss: 0.000003
+2025-10-17 20:04:17,010 [INFO]   Val L2 Distance: 0.0338
+2025-10-17 20:04:17,010 [INFO]   Val Cosine Sim: 0.9531
+2025-10-17 20:04:17,010 [INFO]   Learning Rate: 0.000035
+2025-10-17 20:04:17,093 [INFO] Saved checkpoint: results/part4/exp3_spatial_only_large/checkpoint_epoch_30.pth
+2025-10-17 20:04:17,182 [INFO] New best model! Val loss: 0.0000
+2025-10-17 20:04:17,182 [INFO] 
+Epoch 31/50
+2025-10-17 20:04:17,730 [INFO] Batch 0: load=0.32s, train=0.23s
+2025-10-17 20:04:20,039 [INFO] Batch 10: load=0.00s, train=0.23s
+2025-10-17 20:04:22,317 [INFO] Batch 20: load=0.00s, train=0.22s
+2025-10-17 20:04:24,590 [INFO] Batch 30: load=0.00s, train=0.24s
+2025-10-17 20:04:26,828 [INFO] Batch 40: load=0.00s, train=0.22s
+2025-10-17 20:04:29,060 [INFO] Batch 50: load=0.00s, train=0.22s
+2025-10-17 20:04:31,341 [INFO] Batch 60: load=0.00s, train=0.22s
+2025-10-17 20:04:33,711 [INFO] Batch 70: load=0.00s, train=0.22s
+2025-10-17 20:04:36,003 [INFO] Batch 80: load=0.00s, train=0.22s
+2025-10-17 20:04:38,315 [INFO] Batch 90: load=0.00s, train=0.22s
+2025-10-17 20:04:40,524 [INFO] Batch 100: load=0.00s, train=0.13s
+2025-10-17 20:04:47,711 [INFO] Epoch 31 Results:
+2025-10-17 20:04:47,711 [INFO]   Train Loss: 0.000003
+2025-10-17 20:04:47,712 [INFO]   Val Loss: 0.000003
+2025-10-17 20:04:47,712 [INFO]   Val L2 Distance: 0.0338
+2025-10-17 20:04:47,712 [INFO]   Val Cosine Sim: 0.9472
+2025-10-17 20:04:47,712 [INFO]   Learning Rate: 0.000032
+2025-10-17 20:04:47,712 [INFO] 
+Epoch 32/50
+2025-10-17 20:04:48,201 [INFO] Batch 0: load=0.26s, train=0.23s
+2025-10-17 20:04:50,478 [INFO] Batch 10: load=0.00s, train=0.22s
+2025-10-17 20:04:52,799 [INFO] Batch 20: load=0.00s, train=0.23s
+2025-10-17 20:04:55,100 [INFO] Batch 30: load=0.00s, train=0.24s
+2025-10-17 20:04:57,369 [INFO] Batch 40: load=0.00s, train=0.23s
+2025-10-17 20:04:59,664 [INFO] Batch 50: load=0.00s, train=0.23s
+2025-10-17 20:05:01,958 [INFO] Batch 60: load=0.00s, train=0.23s
+2025-10-17 20:05:04,332 [INFO] Batch 70: load=0.00s, train=0.26s
+2025-10-17 20:05:06,678 [INFO] Batch 80: load=0.00s, train=0.22s
+2025-10-17 20:05:08,986 [INFO] Batch 90: load=0.00s, train=0.24s
+2025-10-17 20:05:11,182 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 20:05:18,431 [INFO] Epoch 32 Results:
+2025-10-17 20:05:18,431 [INFO]   Train Loss: 0.000003
+2025-10-17 20:05:18,432 [INFO]   Val Loss: 0.000003
+2025-10-17 20:05:18,432 [INFO]   Val L2 Distance: 0.0374
+2025-10-17 20:05:18,432 [INFO]   Val Cosine Sim: 0.9308
+2025-10-17 20:05:18,432 [INFO]   Learning Rate: 0.000029
+2025-10-17 20:05:18,432 [INFO] 
+Epoch 33/50
+2025-10-17 20:05:19,001 [INFO] Batch 0: load=0.32s, train=0.25s
+2025-10-17 20:05:21,349 [INFO] Batch 10: load=0.00s, train=0.22s
+2025-10-17 20:05:23,697 [INFO] Batch 20: load=0.00s, train=0.25s
+2025-10-17 20:05:25,961 [INFO] Batch 30: load=0.00s, train=0.22s
+2025-10-17 20:05:28,222 [INFO] Batch 40: load=0.00s, train=0.22s
+2025-10-17 20:05:30,512 [INFO] Batch 50: load=0.00s, train=0.22s
+2025-10-17 20:05:32,766 [INFO] Batch 60: load=0.00s, train=0.22s
+2025-10-17 20:05:35,070 [INFO] Batch 70: load=0.00s, train=0.23s
+2025-10-17 20:05:37,374 [INFO] Batch 80: load=0.00s, train=0.23s
+2025-10-17 20:05:39,701 [INFO] Batch 90: load=0.00s, train=0.22s
+2025-10-17 20:05:41,859 [INFO] Batch 100: load=0.00s, train=0.13s
+2025-10-17 20:05:49,399 [INFO] Epoch 33 Results:
+2025-10-17 20:05:49,400 [INFO]   Train Loss: 0.000003
+2025-10-17 20:05:49,400 [INFO]   Val Loss: 0.000002
+2025-10-17 20:05:49,400 [INFO]   Val L2 Distance: 0.0324
+2025-10-17 20:05:49,400 [INFO]   Val Cosine Sim: 0.9464
+2025-10-17 20:05:49,400 [INFO]   Learning Rate: 0.000026
+2025-10-17 20:05:49,487 [INFO] New best model! Val loss: 0.0000
+2025-10-17 20:05:49,487 [INFO] 
+Epoch 34/50
+2025-10-17 20:05:50,021 [INFO] Batch 0: load=0.29s, train=0.24s
+2025-10-17 20:05:52,405 [INFO] Batch 10: load=0.00s, train=0.24s
+2025-10-17 20:05:54,773 [INFO] Batch 20: load=0.00s, train=0.24s
+2025-10-17 20:05:57,137 [INFO] Batch 30: load=0.00s, train=0.23s
+2025-10-17 20:05:59,502 [INFO] Batch 40: load=0.00s, train=0.24s
+2025-10-17 20:06:01,866 [INFO] Batch 50: load=0.00s, train=0.24s
+2025-10-17 20:06:04,239 [INFO] Batch 60: load=0.00s, train=0.24s
+2025-10-17 20:06:06,604 [INFO] Batch 70: load=0.00s, train=0.23s
+2025-10-17 20:06:08,966 [INFO] Batch 80: load=0.00s, train=0.24s
+2025-10-17 20:06:11,334 [INFO] Batch 90: load=0.00s, train=0.24s
+2025-10-17 20:06:13,586 [INFO] Batch 100: load=0.00s, train=0.13s
+2025-10-17 20:06:20,909 [INFO] Epoch 34 Results:
+2025-10-17 20:06:20,910 [INFO]   Train Loss: 0.000003
+2025-10-17 20:06:20,910 [INFO]   Val Loss: 0.000002
+2025-10-17 20:06:20,910 [INFO]   Val L2 Distance: 0.0287
+2025-10-17 20:06:20,910 [INFO]   Val Cosine Sim: 0.9549
+2025-10-17 20:06:20,910 [INFO]   Learning Rate: 0.000023
+2025-10-17 20:06:20,993 [INFO] New best model! Val loss: 0.0000
+2025-10-17 20:06:20,993 [INFO] 
+Epoch 35/50
+2025-10-17 20:06:21,559 [INFO] Batch 0: load=0.32s, train=0.25s
+2025-10-17 20:06:23,942 [INFO] Batch 10: load=0.00s, train=0.24s
+2025-10-17 20:06:26,305 [INFO] Batch 20: load=0.00s, train=0.24s
+2025-10-17 20:06:28,674 [INFO] Batch 30: load=0.00s, train=0.24s
+2025-10-17 20:06:31,044 [INFO] Batch 40: load=0.00s, train=0.24s
+2025-10-17 20:06:33,405 [INFO] Batch 50: load=0.00s, train=0.23s
+2025-10-17 20:06:35,769 [INFO] Batch 60: load=0.00s, train=0.24s
+2025-10-17 20:06:38,136 [INFO] Batch 70: load=0.00s, train=0.24s
+2025-10-17 20:06:40,503 [INFO] Batch 80: load=0.00s, train=0.24s
+2025-10-17 20:06:42,863 [INFO] Batch 90: load=0.00s, train=0.24s
+2025-10-17 20:06:45,115 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 20:06:52,424 [INFO] Epoch 35 Results:
+2025-10-17 20:06:52,424 [INFO]   Train Loss: 0.000002
+2025-10-17 20:06:52,424 [INFO]   Val Loss: 0.000002
+2025-10-17 20:06:52,424 [INFO]   Val L2 Distance: 0.0311
+2025-10-17 20:06:52,424 [INFO]   Val Cosine Sim: 0.9442
+2025-10-17 20:06:52,424 [INFO]   Learning Rate: 0.000021
+2025-10-17 20:06:52,503 [INFO] Saved checkpoint: results/part4/exp3_spatial_only_large/checkpoint_epoch_35.pth
+2025-10-17 20:06:52,503 [INFO] 
+Epoch 36/50
+2025-10-17 20:06:53,051 [INFO] Batch 0: load=0.30s, train=0.24s
+2025-10-17 20:06:55,420 [INFO] Batch 10: load=0.00s, train=0.24s
+2025-10-17 20:06:57,783 [INFO] Batch 20: load=0.00s, train=0.24s
+2025-10-17 20:07:00,152 [INFO] Batch 30: load=0.00s, train=0.24s
+2025-10-17 20:07:02,515 [INFO] Batch 40: load=0.00s, train=0.23s
+2025-10-17 20:07:04,877 [INFO] Batch 50: load=0.00s, train=0.24s
+2025-10-17 20:07:07,241 [INFO] Batch 60: load=0.00s, train=0.23s
+2025-10-17 20:07:09,604 [INFO] Batch 70: load=0.00s, train=0.24s
+2025-10-17 20:07:11,967 [INFO] Batch 80: load=0.00s, train=0.24s
+2025-10-17 20:07:14,336 [INFO] Batch 90: load=0.00s, train=0.24s
+2025-10-17 20:07:16,581 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 20:07:23,852 [INFO] Epoch 36 Results:
+2025-10-17 20:07:23,852 [INFO]   Train Loss: 0.000002
+2025-10-17 20:07:23,852 [INFO]   Val Loss: 0.000002
+2025-10-17 20:07:23,852 [INFO]   Val L2 Distance: 0.0290
+2025-10-17 20:07:23,852 [INFO]   Val Cosine Sim: 0.9474
+2025-10-17 20:07:23,852 [INFO]   Learning Rate: 0.000018
+2025-10-17 20:07:23,852 [INFO] 
+Epoch 37/50
+2025-10-17 20:07:24,354 [INFO] Batch 0: load=0.26s, train=0.24s
+2025-10-17 20:07:26,721 [INFO] Batch 10: load=0.00s, train=0.24s
+2025-10-17 20:07:29,091 [INFO] Batch 20: load=0.00s, train=0.24s
+2025-10-17 20:07:31,464 [INFO] Batch 30: load=0.00s, train=0.24s
+2025-10-17 20:07:33,832 [INFO] Batch 40: load=0.00s, train=0.24s
+2025-10-17 20:07:36,198 [INFO] Batch 50: load=0.00s, train=0.24s
+2025-10-17 20:07:38,558 [INFO] Batch 60: load=0.00s, train=0.24s
+2025-10-17 20:07:40,923 [INFO] Batch 70: load=0.00s, train=0.24s
+2025-10-17 20:07:43,288 [INFO] Batch 80: load=0.00s, train=0.23s
+2025-10-17 20:07:45,649 [INFO] Batch 90: load=0.00s, train=0.23s
+2025-10-17 20:07:47,907 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 20:07:55,184 [INFO] Epoch 37 Results:
+2025-10-17 20:07:55,184 [INFO]   Train Loss: 0.000002
+2025-10-17 20:07:55,184 [INFO]   Val Loss: 0.000002
+2025-10-17 20:07:55,184 [INFO]   Val L2 Distance: 0.0296
+2025-10-17 20:07:55,184 [INFO]   Val Cosine Sim: 0.9445
+2025-10-17 20:07:55,184 [INFO]   Learning Rate: 0.000016
+2025-10-17 20:07:55,184 [INFO] 
+Epoch 38/50
+2025-10-17 20:07:55,676 [INFO] Batch 0: load=0.25s, train=0.24s
+2025-10-17 20:07:58,047 [INFO] Batch 10: load=0.00s, train=0.24s
+2025-10-17 20:08:00,413 [INFO] Batch 20: load=0.00s, train=0.24s
+2025-10-17 20:08:02,774 [INFO] Batch 30: load=0.00s, train=0.24s
+2025-10-17 20:08:05,143 [INFO] Batch 40: load=0.00s, train=0.24s
+2025-10-17 20:08:07,506 [INFO] Batch 50: load=0.00s, train=0.24s
+2025-10-17 20:08:09,868 [INFO] Batch 60: load=0.00s, train=0.24s
+2025-10-17 20:08:12,230 [INFO] Batch 70: load=0.00s, train=0.24s
+2025-10-17 20:08:14,591 [INFO] Batch 80: load=0.00s, train=0.24s
+2025-10-17 20:08:16,958 [INFO] Batch 90: load=0.00s, train=0.23s
+2025-10-17 20:08:19,206 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 20:08:26,473 [INFO] Epoch 38 Results:
+2025-10-17 20:08:26,473 [INFO]   Train Loss: 0.000002
+2025-10-17 20:08:26,473 [INFO]   Val Loss: 0.000002
+2025-10-17 20:08:26,473 [INFO]   Val L2 Distance: 0.0274
+2025-10-17 20:08:26,473 [INFO]   Val Cosine Sim: 0.9487
+2025-10-17 20:08:26,473 [INFO]   Learning Rate: 0.000014
+2025-10-17 20:08:26,561 [INFO] New best model! Val loss: 0.0000
+2025-10-17 20:08:26,562 [INFO] 
+Epoch 39/50
+2025-10-17 20:08:27,061 [INFO] Batch 0: load=0.26s, train=0.24s
+2025-10-17 20:08:29,429 [INFO] Batch 10: load=0.00s, train=0.24s
+2025-10-17 20:08:31,798 [INFO] Batch 20: load=0.00s, train=0.23s
+2025-10-17 20:08:34,172 [INFO] Batch 30: load=0.00s, train=0.24s
+2025-10-17 20:08:36,541 [INFO] Batch 40: load=0.00s, train=0.24s
+2025-10-17 20:08:38,918 [INFO] Batch 50: load=0.00s, train=0.24s
+2025-10-17 20:08:41,285 [INFO] Batch 60: load=0.00s, train=0.24s
+2025-10-17 20:08:43,653 [INFO] Batch 70: load=0.00s, train=0.24s
+2025-10-17 20:08:46,025 [INFO] Batch 80: load=0.00s, train=0.24s
+2025-10-17 20:08:48,393 [INFO] Batch 90: load=0.00s, train=0.24s
+2025-10-17 20:08:50,657 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 20:08:57,938 [INFO] Epoch 39 Results:
+2025-10-17 20:08:57,939 [INFO]   Train Loss: 0.000002
+2025-10-17 20:08:57,939 [INFO]   Val Loss: 0.000002
+2025-10-17 20:08:57,939 [INFO]   Val L2 Distance: 0.0257
+2025-10-17 20:08:57,939 [INFO]   Val Cosine Sim: 0.9519
+2025-10-17 20:08:57,939 [INFO]   Learning Rate: 0.000011
+2025-10-17 20:08:58,024 [INFO] New best model! Val loss: 0.0000
+2025-10-17 20:08:58,024 [INFO] 
+Epoch 40/50
+2025-10-17 20:08:58,563 [INFO] Batch 0: load=0.30s, train=0.24s
+2025-10-17 20:09:00,929 [INFO] Batch 10: load=0.00s, train=0.24s
+2025-10-17 20:09:03,300 [INFO] Batch 20: load=0.00s, train=0.24s
+2025-10-17 20:09:05,667 [INFO] Batch 30: load=0.00s, train=0.24s
+2025-10-17 20:09:08,033 [INFO] Batch 40: load=0.00s, train=0.24s
+2025-10-17 20:09:10,395 [INFO] Batch 50: load=0.00s, train=0.23s
+2025-10-17 20:09:12,764 [INFO] Batch 60: load=0.00s, train=0.24s
+2025-10-17 20:09:15,138 [INFO] Batch 70: load=0.00s, train=0.24s
+2025-10-17 20:09:17,510 [INFO] Batch 80: load=0.00s, train=0.24s
+2025-10-17 20:09:19,877 [INFO] Batch 90: load=0.00s, train=0.24s
+2025-10-17 20:09:22,131 [INFO] Batch 100: load=0.00s, train=0.13s
+2025-10-17 20:09:29,383 [INFO] Epoch 40 Results:
+2025-10-17 20:09:29,383 [INFO]   Train Loss: 0.000002
+2025-10-17 20:09:29,383 [INFO]   Val Loss: 0.000002
+2025-10-17 20:09:29,383 [INFO]   Val L2 Distance: 0.0274
+2025-10-17 20:09:29,383 [INFO]   Val Cosine Sim: 0.9454
+2025-10-17 20:09:29,383 [INFO]   Learning Rate: 0.000010
+2025-10-17 20:09:29,453 [INFO] Saved checkpoint: results/part4/exp3_spatial_only_large/checkpoint_epoch_40.pth
+2025-10-17 20:09:29,453 [INFO] 
+Epoch 41/50
+2025-10-17 20:09:29,954 [INFO] Batch 0: load=0.26s, train=0.24s
+2025-10-17 20:09:32,326 [INFO] Batch 10: load=0.00s, train=0.24s
+2025-10-17 20:09:34,697 [INFO] Batch 20: load=0.00s, train=0.24s
+2025-10-17 20:09:37,066 [INFO] Batch 30: load=0.00s, train=0.24s
+2025-10-17 20:09:39,437 [INFO] Batch 40: load=0.00s, train=0.24s
+2025-10-17 20:09:41,806 [INFO] Batch 50: load=0.00s, train=0.24s
+2025-10-17 20:09:44,178 [INFO] Batch 60: load=0.00s, train=0.24s
+2025-10-17 20:09:46,549 [INFO] Batch 70: load=0.00s, train=0.24s
+2025-10-17 20:09:48,917 [INFO] Batch 80: load=0.00s, train=0.24s
+2025-10-17 20:09:51,285 [INFO] Batch 90: load=0.00s, train=0.24s
+2025-10-17 20:09:53,543 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 20:10:00,735 [INFO] Epoch 41 Results:
+2025-10-17 20:10:00,735 [INFO]   Train Loss: 0.000002
+2025-10-17 20:10:00,735 [INFO]   Val Loss: 0.000002
+2025-10-17 20:10:00,735 [INFO]   Val L2 Distance: 0.0256
+2025-10-17 20:10:00,735 [INFO]   Val Cosine Sim: 0.9498
+2025-10-17 20:10:00,735 [INFO]   Learning Rate: 0.000008
+2025-10-17 20:10:00,828 [INFO] New best model! Val loss: 0.0000
+2025-10-17 20:10:00,828 [INFO] 
+Epoch 42/50
+2025-10-17 20:10:01,315 [INFO] Batch 0: load=0.26s, train=0.23s
+2025-10-17 20:10:03,557 [INFO] Batch 10: load=0.00s, train=0.22s
+2025-10-17 20:10:05,790 [INFO] Batch 20: load=0.00s, train=0.22s
+2025-10-17 20:10:08,025 [INFO] Batch 30: load=0.00s, train=0.22s
+2025-10-17 20:10:10,257 [INFO] Batch 40: load=0.00s, train=0.22s
+2025-10-17 20:10:12,490 [INFO] Batch 50: load=0.00s, train=0.22s
+2025-10-17 20:10:14,786 [INFO] Batch 60: load=0.00s, train=0.22s
+2025-10-17 20:10:17,030 [INFO] Batch 70: load=0.00s, train=0.23s
+2025-10-17 20:10:19,264 [INFO] Batch 80: load=0.00s, train=0.22s
+2025-10-17 20:10:21,496 [INFO] Batch 90: load=0.00s, train=0.22s
+2025-10-17 20:10:23,620 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 20:10:30,472 [INFO] Epoch 42 Results:
+2025-10-17 20:10:30,472 [INFO]   Train Loss: 0.000002
+2025-10-17 20:10:30,472 [INFO]   Val Loss: 0.000002
+2025-10-17 20:10:30,472 [INFO]   Val L2 Distance: 0.0258
+2025-10-17 20:10:30,472 [INFO]   Val Cosine Sim: 0.9463
+2025-10-17 20:10:30,472 [INFO]   Learning Rate: 0.000006
+2025-10-17 20:10:30,473 [INFO] 
+Epoch 43/50
+2025-10-17 20:10:30,957 [INFO] Batch 0: load=0.26s, train=0.23s
+2025-10-17 20:10:33,192 [INFO] Batch 10: load=0.00s, train=0.22s
+2025-10-17 20:10:35,429 [INFO] Batch 20: load=0.00s, train=0.22s
+2025-10-17 20:10:37,664 [INFO] Batch 30: load=0.00s, train=0.22s
+2025-10-17 20:10:39,901 [INFO] Batch 40: load=0.00s, train=0.22s
+2025-10-17 20:10:42,137 [INFO] Batch 50: load=0.00s, train=0.22s
+2025-10-17 20:10:44,370 [INFO] Batch 60: load=0.00s, train=0.22s
+2025-10-17 20:10:46,608 [INFO] Batch 70: load=0.00s, train=0.22s
+2025-10-17 20:10:48,844 [INFO] Batch 80: load=0.00s, train=0.22s
+2025-10-17 20:10:51,079 [INFO] Batch 90: load=0.00s, train=0.22s
+2025-10-17 20:10:53,207 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 20:11:00,120 [INFO] Epoch 43 Results:
+2025-10-17 20:11:00,120 [INFO]   Train Loss: 0.000002
+2025-10-17 20:11:00,120 [INFO]   Val Loss: 0.000001
+2025-10-17 20:11:00,120 [INFO]   Val L2 Distance: 0.0250
+2025-10-17 20:11:00,120 [INFO]   Val Cosine Sim: 0.9509
+2025-10-17 20:11:00,120 [INFO]   Learning Rate: 0.000005
+2025-10-17 20:11:00,198 [INFO] New best model! Val loss: 0.0000
+2025-10-17 20:11:00,198 [INFO] 
+Epoch 44/50
+2025-10-17 20:11:00,690 [INFO] Batch 0: load=0.27s, train=0.23s
+2025-10-17 20:11:02,925 [INFO] Batch 10: load=0.00s, train=0.22s
+2025-10-17 20:11:05,158 [INFO] Batch 20: load=0.00s, train=0.22s
+2025-10-17 20:11:07,394 [INFO] Batch 30: load=0.00s, train=0.22s
+2025-10-17 20:11:09,625 [INFO] Batch 40: load=0.00s, train=0.22s
+2025-10-17 20:11:11,858 [INFO] Batch 50: load=0.00s, train=0.22s
+2025-10-17 20:11:14,091 [INFO] Batch 60: load=0.00s, train=0.22s
+2025-10-17 20:11:16,324 [INFO] Batch 70: load=0.00s, train=0.22s
+2025-10-17 20:11:18,556 [INFO] Batch 80: load=0.00s, train=0.22s
+2025-10-17 20:11:20,789 [INFO] Batch 90: load=0.00s, train=0.22s
+2025-10-17 20:11:22,915 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 20:11:29,795 [INFO] Epoch 44 Results:
+2025-10-17 20:11:29,795 [INFO]   Train Loss: 0.000002
+2025-10-17 20:11:29,795 [INFO]   Val Loss: 0.000001
+2025-10-17 20:11:29,795 [INFO]   Val L2 Distance: 0.0250
+2025-10-17 20:11:29,796 [INFO]   Val Cosine Sim: 0.9487
+2025-10-17 20:11:29,796 [INFO]   Learning Rate: 0.000004
+2025-10-17 20:11:29,877 [INFO] New best model! Val loss: 0.0000
+2025-10-17 20:11:29,877 [INFO] 
+Epoch 45/50
+2025-10-17 20:11:30,413 [INFO] Batch 0: load=0.31s, train=0.23s
+2025-10-17 20:11:32,648 [INFO] Batch 10: load=0.00s, train=0.22s
+2025-10-17 20:11:34,881 [INFO] Batch 20: load=0.00s, train=0.22s
+2025-10-17 20:11:37,116 [INFO] Batch 30: load=0.00s, train=0.22s
+2025-10-17 20:11:39,348 [INFO] Batch 40: load=0.00s, train=0.22s
+2025-10-17 20:11:41,582 [INFO] Batch 50: load=0.00s, train=0.22s
+2025-10-17 20:11:43,815 [INFO] Batch 60: load=0.00s, train=0.22s
+2025-10-17 20:11:46,048 [INFO] Batch 70: load=0.00s, train=0.22s
+2025-10-17 20:11:48,284 [INFO] Batch 80: load=0.00s, train=0.22s
+2025-10-17 20:11:50,577 [INFO] Batch 90: load=0.00s, train=0.23s
+2025-10-17 20:11:52,773 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 20:11:59,867 [INFO] Epoch 45 Results:
+2025-10-17 20:11:59,867 [INFO]   Train Loss: 0.000002
+2025-10-17 20:11:59,867 [INFO]   Val Loss: 0.000002
+2025-10-17 20:11:59,867 [INFO]   Val L2 Distance: 0.0268
+2025-10-17 20:11:59,867 [INFO]   Val Cosine Sim: 0.9431
+2025-10-17 20:11:59,867 [INFO]   Learning Rate: 0.000002
+2025-10-17 20:11:59,942 [INFO] Saved checkpoint: results/part4/exp3_spatial_only_large/checkpoint_epoch_45.pth
+2025-10-17 20:11:59,942 [INFO] 
+Epoch 46/50
+2025-10-17 20:12:00,429 [INFO] Batch 0: load=0.26s, train=0.23s
+2025-10-17 20:12:02,712 [INFO] Batch 10: load=0.00s, train=0.22s
+2025-10-17 20:12:04,978 [INFO] Batch 20: load=0.00s, train=0.22s
+2025-10-17 20:12:07,217 [INFO] Batch 30: load=0.00s, train=0.22s
+2025-10-17 20:12:09,451 [INFO] Batch 40: load=0.00s, train=0.22s
+2025-10-17 20:12:11,736 [INFO] Batch 50: load=0.00s, train=0.22s
+2025-10-17 20:12:13,971 [INFO] Batch 60: load=0.00s, train=0.22s
+2025-10-17 20:12:16,204 [INFO] Batch 70: load=0.00s, train=0.22s
+2025-10-17 20:12:18,436 [INFO] Batch 80: load=0.00s, train=0.22s
+2025-10-17 20:12:20,668 [INFO] Batch 90: load=0.00s, train=0.22s
+2025-10-17 20:12:22,796 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 20:12:29,723 [INFO] Epoch 46 Results:
+2025-10-17 20:12:29,723 [INFO]   Train Loss: 0.000002
+2025-10-17 20:12:29,723 [INFO]   Val Loss: 0.000002
+2025-10-17 20:12:29,723 [INFO]   Val L2 Distance: 0.0267
+2025-10-17 20:12:29,723 [INFO]   Val Cosine Sim: 0.9420
+2025-10-17 20:12:29,723 [INFO]   Learning Rate: 0.000002
+2025-10-17 20:12:29,723 [INFO] 
+Epoch 47/50
+2025-10-17 20:12:30,247 [INFO] Batch 0: load=0.30s, train=0.23s
+2025-10-17 20:12:32,480 [INFO] Batch 10: load=0.00s, train=0.22s
+2025-10-17 20:12:34,714 [INFO] Batch 20: load=0.00s, train=0.22s
+2025-10-17 20:12:37,014 [INFO] Batch 30: load=0.00s, train=0.23s
+2025-10-17 20:12:39,306 [INFO] Batch 40: load=0.00s, train=0.24s
+2025-10-17 20:12:41,612 [INFO] Batch 50: load=0.00s, train=0.23s
+2025-10-17 20:12:43,925 [INFO] Batch 60: load=0.00s, train=0.22s
+2025-10-17 20:12:46,186 [INFO] Batch 70: load=0.00s, train=0.25s
+2025-10-17 20:12:48,424 [INFO] Batch 80: load=0.00s, train=0.22s
+2025-10-17 20:12:50,678 [INFO] Batch 90: load=0.00s, train=0.22s
+2025-10-17 20:12:52,805 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 20:12:59,819 [INFO] Epoch 47 Results:
+2025-10-17 20:12:59,820 [INFO]   Train Loss: 0.000002
+2025-10-17 20:12:59,820 [INFO]   Val Loss: 0.000002
+2025-10-17 20:12:59,820 [INFO]   Val L2 Distance: 0.0265
+2025-10-17 20:12:59,820 [INFO]   Val Cosine Sim: 0.9429
+2025-10-17 20:12:59,820 [INFO]   Learning Rate: 0.000001
+2025-10-17 20:12:59,820 [INFO] 
+Epoch 48/50
+2025-10-17 20:13:00,321 [INFO] Batch 0: load=0.27s, train=0.23s
+2025-10-17 20:13:02,602 [INFO] Batch 10: load=0.00s, train=0.22s
+2025-10-17 20:13:04,963 [INFO] Batch 20: load=0.00s, train=0.23s
+2025-10-17 20:13:07,301 [INFO] Batch 30: load=0.00s, train=0.24s
+2025-10-17 20:13:09,676 [INFO] Batch 40: load=0.00s, train=0.24s
+2025-10-17 20:13:12,132 [INFO] Batch 50: load=0.00s, train=0.24s
+2025-10-17 20:13:14,500 [INFO] Batch 60: load=0.00s, train=0.23s
+2025-10-17 20:13:16,839 [INFO] Batch 70: load=0.00s, train=0.23s
+2025-10-17 20:13:19,147 [INFO] Batch 80: load=0.00s, train=0.23s
+2025-10-17 20:13:21,386 [INFO] Batch 90: load=0.00s, train=0.22s
+2025-10-17 20:13:23,513 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 20:13:30,361 [INFO] Epoch 48 Results:
+2025-10-17 20:13:30,361 [INFO]   Train Loss: 0.000002
+2025-10-17 20:13:30,361 [INFO]   Val Loss: 0.000001
+2025-10-17 20:13:30,361 [INFO]   Val L2 Distance: 0.0249
+2025-10-17 20:13:30,361 [INFO]   Val Cosine Sim: 0.9479
+2025-10-17 20:13:30,361 [INFO]   Learning Rate: 0.000000
+2025-10-17 20:13:30,445 [INFO] New best model! Val loss: 0.0000
+2025-10-17 20:13:30,445 [INFO] 
+Epoch 49/50
+2025-10-17 20:13:30,940 [INFO] Batch 0: load=0.27s, train=0.23s
+2025-10-17 20:13:33,178 [INFO] Batch 10: load=0.00s, train=0.22s
+2025-10-17 20:13:35,412 [INFO] Batch 20: load=0.00s, train=0.22s
+2025-10-17 20:13:37,649 [INFO] Batch 30: load=0.00s, train=0.22s
+2025-10-17 20:13:39,884 [INFO] Batch 40: load=0.00s, train=0.22s
+2025-10-17 20:13:42,116 [INFO] Batch 50: load=0.00s, train=0.22s
+2025-10-17 20:13:44,352 [INFO] Batch 60: load=0.00s, train=0.22s
+2025-10-17 20:13:46,584 [INFO] Batch 70: load=0.00s, train=0.22s
+2025-10-17 20:13:48,817 [INFO] Batch 80: load=0.00s, train=0.22s
+2025-10-17 20:13:51,051 [INFO] Batch 90: load=0.00s, train=0.22s
+2025-10-17 20:13:53,175 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 20:14:00,066 [INFO] Epoch 49 Results:
+2025-10-17 20:14:00,067 [INFO]   Train Loss: 0.000002
+2025-10-17 20:14:00,067 [INFO]   Val Loss: 0.000002
+2025-10-17 20:14:00,067 [INFO]   Val L2 Distance: 0.0253
+2025-10-17 20:14:00,067 [INFO]   Val Cosine Sim: 0.9476
+2025-10-17 20:14:00,067 [INFO]   Learning Rate: 0.000000
+2025-10-17 20:14:00,067 [INFO] 
+Epoch 50/50
+2025-10-17 20:14:00,571 [INFO] Batch 0: load=0.28s, train=0.23s
+2025-10-17 20:14:02,806 [INFO] Batch 10: load=0.00s, train=0.22s
+2025-10-17 20:14:05,038 [INFO] Batch 20: load=0.00s, train=0.22s
+2025-10-17 20:14:07,272 [INFO] Batch 30: load=0.00s, train=0.22s
+2025-10-17 20:14:09,504 [INFO] Batch 40: load=0.00s, train=0.22s
+2025-10-17 20:14:11,738 [INFO] Batch 50: load=0.00s, train=0.22s
+2025-10-17 20:14:13,971 [INFO] Batch 60: load=0.00s, train=0.22s
+2025-10-17 20:14:16,208 [INFO] Batch 70: load=0.00s, train=0.22s
+2025-10-17 20:14:18,443 [INFO] Batch 80: load=0.00s, train=0.22s
+2025-10-17 20:14:20,676 [INFO] Batch 90: load=0.00s, train=0.22s
+2025-10-17 20:14:22,801 [INFO] Batch 100: load=0.00s, train=0.12s
+2025-10-17 20:14:29,701 [INFO] Epoch 50 Results:
+2025-10-17 20:14:29,701 [INFO]   Train Loss: 0.000002
+2025-10-17 20:14:29,701 [INFO]   Val Loss: 0.000001
+2025-10-17 20:14:29,701 [INFO]   Val L2 Distance: 0.0246
+2025-10-17 20:14:29,701 [INFO]   Val Cosine Sim: 0.9496
+2025-10-17 20:14:29,701 [INFO]   Learning Rate: 0.000000
+2025-10-17 20:14:29,770 [INFO] Saved checkpoint: results/part4/exp3_spatial_only_large/checkpoint_epoch_50.pth
+2025-10-17 20:14:29,848 [INFO] New best model! Val loss: 0.0000
+2025-10-17 20:14:29,922 [INFO] Training complete! Final model: results/part4/exp3_spatial_only_large/final_model.pth

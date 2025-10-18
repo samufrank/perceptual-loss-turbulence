@@ -232,7 +232,7 @@ class TurbulenceRobustLossV2(nn.Module):
         
         # Mask out self-similarities (diagonal)
         mask = torch.eye(batch_size, device=clean_norm.device).bool()
-        sim_matrix_masked = sim_matrix.masked_fill(mask, -1e9)
+        sim_matrix_masked = sim_matrix.masked_fill(mask, -1e4)
         
         # For each sample, find hardest negative (most similar non-matching scene)
         hard_negatives_idx = sim_matrix_masked.argmax(dim=1)  # (B,)
