@@ -1,223 +1,146 @@
-# Perceptual Loss for Atmospheric Turbulence
+# Turbulence-Robust Perceptual Loss
 
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)](https://pytorch.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Research on perceptual loss functions for atmospheric turbulence mitigation, combining multi-scale spatial features, frequency domain modeling, and contrastive learning.
+A multi-scale encoder that produces features invariant to atmospheric turbulence. On the OTIS benchmark, it reduces feature-space distance by 99.5% compared to VGG relu3_3 (23.16 → 0.12 L2).
 
-## Overview
+## Problem
 
-This project investigates perceptual losses using pre-trained CNNs (VGG-16) and develops novel turbulence-robust perceptual losses that better correlate with human perception compared to standard ℓp losses.
+Standard perceptual losses using VGG features fail on atmospheric turbulence. While VGG relu3_3 is robust to additive noise, it cannot discriminate turbulence severity—feature distances vary only ~2% between weak and strong turbulence levels. This makes VGG unsuitable as a loss function for turbulence mitigation networks.
 
-### Key Features
+## Approach
 
-- Baseline ℓ1/ℓ2 loss analysis on translated images
-- VGG-16 multi-layer feature extraction and comparison
-- Noise robustness testing for perceptual losses
-- Novel turbulence-robust perceptual loss combining:
-  - Multi-scale spatial features
-  - Frequency domain modeling
-  - Contrastive learning
+Train a multi-scale encoder end-to-end on clean/turbulent image pairs with a dual-objective loss that enforces both magnitude proximity (L2) and directional invariance (cosine similarity):
+
+```
+L = (1 - w) · L_L2 + w · L_cosine
+```
+
+The cosine term is critical: L2-only models collapse directionally on real turbulence (cosine similarity drops from 0.95 on validation to 0.33 on OTIS benchmark), while the dual-objective model maintains 0.9999 alignment.
+
+### Encoder Architecture
+
+Four-stage hierarchical encoder with progressive downsampling:
+
+| Stage | Resolution | Channels | Structure |
+|-------|------------|----------|-----------|
+| 1 | 256×256 | 64 | 2× (Conv3×3 → BN → ReLU) → MaxPool |
+| 2 | 128×128 | 128 | 2× (Conv3×3 → BN → ReLU) → MaxPool |
+| 3 | 64×64 | 256 | 2× (Conv3×3 → BN → ReLU) → MaxPool |
+| 4 | 32×32 | 512 | 2× (Conv3×3 → BN → ReLU) → MaxPool |
+
+Each stage has a projection head mapping to standardized dimensionality for multi-scale loss computation.
+
+### Training
+
+- Dataset: Places365 images paired with QuickTurbSim-generated turbulent variants (6 per clean image at medium/strong severity)
+- Scale: 2,338 image pairs (large configuration)
+- Setup: 50 epochs, batch 16, AdamW (lr=1e-4, weight decay=1e-5), cosine annealing
+- Hardware: RTX 3070, FP16 mixed precision, 256×256 resolution
+
+## Results
+
+### OTIS Benchmark
+
+The OTIS (Optical Turbulence Image Set) dataset contains test patterns imaged through a heated turbulence chamber at controlled severity levels. Lower L2 distance and higher cosine similarity indicate better invariance to turbulence.
+
+| Model | L2 Distance ↓ | Cosine Similarity ↑ |
+|-------|---------------|---------------------|
+| VGG relu3_3 | 23.16 ± 3.27 | 0.736 ± 0.023 |
+| VGG Multi-Layer | 15.86 ± 2.28 | 0.776 ± 0.017 |
+| Ours (L2 only) | 0.35 ± 0.09 | 0.327 ± 0.079 |
+| Ours (L2 + Cosine) | **0.12 ± 0.01** | **0.9999 ± 0.00001** |
+
+### Cosine Weight Ablation
+
+| Weight (w) | L2 Distance | Cosine Similarity |
+|------------|-------------|-------------------|
+| 0.0 (pure L2) | 2.21 | 0.37 |
+| 0.5 (optimal) | 0.46 | 0.9998 |
+| 1.0 (pure cosine) | ~1.0 | ~0.9999 |
+
+Pure L2 training achieves low L2 but poor directional alignment. Adding the cosine constraint (w=0.5) preserves alignment without sacrificing L2 performance.
+
+### Temporal Consistency (CLEAR Dataset)
+
+Evaluated on video sequence "Tene_SD_001v2" (rotating windmill under atmospheric distortion) from the University of Bristol 2024 Turbulence Dataset:
+
+- Frame-to-frame L2: 0.045 (vs 0.73 on static OTIS pairs)
+- Frame-to-frame cosine: 1.0000
+
+The 16× compression in temporal vs static L2 indicates the model learned to suppress turbulence variation while tracking real scene motion.
 
 ## Project Structure
 
 ```
-perceptual-loss-turbulence/
-├── config/              # Experiment configurations
-├── data/               # Dataset (clean and turbulent images)
-├── results/            # Experimental results and figures
-├── scripts/            # Main implementation scripts
-│   ├── part1_baseline_losses.py
-│   ├── part2_vgg_features.py
-│   ├── part3_noise_robustness.py
-│   └── generate_turbulence.py
-├── src/                # Core implementation (Part 4)
-│   ├── losses.py       # Loss function implementations
-│   ├── models.py       # Network architectures
-│   ├── dataset.py      # Data loading utilities
-│   ├── train.py        # Training script
-│   └── utils.py        # Helper functions
-└── tests/              # Unit tests
-```
-
-## Installation
-
-### Prerequisites
-
-- Python 3.9+
-- CUDA 11.8+ (for GPU training)
-- 8GB+ GPU memory (recommended for Part 4)
-
-### Setup
-
-**Option 1: pip + venv (recommended)**
-
-```bash
-# Clone repository
-git clone https://github.com/yourusername/perceptual-loss-turbulence.git
-cd perceptual-loss-turbulence
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-**Option 2: conda**
-
-```bash
-# Clone repository
-git clone https://github.com/yourusername/perceptual-loss-turbulence.git
-cd perceptual-loss-turbulence
-
-# Create conda environment
-conda create -n turbulence python=3.9
-conda activate turbulence
-
-# Install dependencies
-pip install -r requirements.txt
+├── models/
+│   └── turbulence_encoder.py      # Multi-scale encoder architecture
+├── losses/
+│   └── turbulence_losses.py       # Dual-objective loss implementation
+├── configs/                        # Experiment configurations (YAML)
+├── scripts/
+│   ├── baseline_pixel_losses.py   # L1/L2 baseline analysis
+│   ├── vgg_feature_analysis.py    # VGG layer comparison
+│   ├── noise_robustness.py        # Noise robustness evaluation
+│   ├── turbulence_robustness.py   # Turbulence robustness evaluation
+│   ├── evaluate_baselines.py      # OTIS benchmark evaluation
+│   └── generate_quickturb_dataset.py
+├── train_encoder.py               # Main training script
+├── utils/
+│   └── turbulence_dataset.py      # Data loading utilities
+└── results/                        # Experiment outputs and visualizations
 ```
 
 ## Usage
 
-### Baseline Analysis
+### Setup
 
 ```bash
-python scripts/part1_baseline_losses.py --image data/test_images/sample.jpg --output results/part1
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
 ```
 
-Demonstrates limitations of ℓ1 and ℓ2 losses on geometrically shifted images.
-
-### Feature Extraction Analysis
+### Training
 
 ```bash
-python scripts/part2_vgg_features.py --image data/test_images/sample.jpg --output results/part2
+# Generate turbulent training pairs (requires QuickTurbSim)
+python scripts/generate_quickturb_dataset.py --input data/clean_images --output data/training_pairs
+
+# Train encoder
+python train_encoder.py --config configs/exp6_full_model_large.yaml
 ```
 
-Analyzes VGG-16 feature robustness across multiple layers to geometric transformations.
-
-### Robustness Evaluation
+### Evaluation
 
 ```bash
-python scripts/part3_noise_robustness.py --image data/test_images/sample.jpg --output results/part3 --layer relu3_3
+python scripts/evaluate_baselines.py
 ```
 
-Evaluates perceptual loss robustness to additive noise corruption.
+## Limitations
 
-### Turbulence-Robust Features
-
-```bash
-# Generate turbulence dataset
-python scripts/generate_turbulence.py --input_dir data/clean/ --output_dir data/turbulent/ --num_variations 10
-
-# Train model
-python src/train.py --config config/experiments.yaml
-```
-
-## Methodology
-
-### Perceptual Loss Background
-
-Standard ℓp losses compare images pixel-by-pixel, which doesn't align with human perception. For example, a 1-pixel shift causes large ℓ2 loss despite images appearing nearly identical to humans.
-
-**Perceptual losses** use neural network features (e.g., VGG-16) to compare images at multiple levels of abstraction:
-- Early layers: edges, colors, textures
-- Middle layers: patterns, object parts
-- Deep layers: semantic content
-
-### Novel Contributions
-
-Our turbulence-robust perceptual loss combines:
-
-1. **Multi-scale spatial features:** Capture distortions at different granularities
-2. **Frequency domain loss:** Explicitly model blur component of turbulence
-3. **Contrastive learning:** Learn features where clean/turbulent pairs are similar, different scenes are dissimilar
-
-**Loss formulation:**
-```
-L_total = α·L_spatial + β·L_frequency + γ·L_contrastive
-```
-
-## Dataset
-
-### Image Selection
-
-We use complex scene images (not isolated objects) to better evaluate perceptual quality:
-- Indoor scenes (living rooms, kitchens)
-- Outdoor scenes (streets, parks)
-- Multiple objects at different depths
-- Rich textures and spatial relationships
-
-### Turbulence Generation
-
-Using DAATSim simulator to generate physics-based atmospheric turbulence:
-- Geometric warping (spatially correlated distortions)
-- Temporal blur
-- Variable turbulence strength (weak, medium, strong)
-
-## Results
-
-### Baseline Analysis
-
-| Metric | Value |
-|--------|-------|
-| ℓ1 Loss | X.XX |
-| ℓ2 Loss | X.XX |
-
-Despite minimal visual difference, pixel losses are non-trivial.
-
-### Feature Extraction Analysis
-
-Recommended layer for perceptual loss: **relu3_3**
-
-Rationale: Optimal balance between robustness to geometric shifts and sensitivity to semantic changes.
-
-### Robustness Evaluation
-
-[Results pending]
-
-### Turbulence-Robust Features
-
-[Results pending]
+- Resolution: 256×256 (GPU memory constraint)—may not capture fine texture at higher resolution
+- Synthetic training: ~4× performance gap between validation and OTIS suggests domain shift from simulated to real turbulence
+- Benchmark scope: OTIS uses artificial test patterns; no evaluation on natural scenes
+- No downstream tasks: Not yet tested as loss function for actual turbulence mitigation networks
 
 ## Requirements
 
-See `requirements.txt` for full list. Key dependencies:
+- Python 3.9+
 - PyTorch 2.0+
-- torchvision
-- numpy
-- matplotlib
-- scikit-image
-- scikit-learn
-- Pillow
+- CUDA 11.8+ (for GPU training)
+- 8GB+ VRAM recommended
 
-## Citation
+See `requirements.txt` for full dependencies.
 
-If you find this work useful, please cite:
+## References
 
-```bibtex
-@misc{perceptual_turbulence_2025,
-  author = {Your Name},
-  title = {Perceptual Loss for Atmospheric Turbulence Mitigation},
-  year = {2025},
-  publisher = {GitHub},
-  url = {https://github.com/yourusername/perceptual-loss-turbulence}
-}
-```
+- Johnson et al., "Perceptual Losses for Real-Time Style Transfer and Super-Resolution," ECCV 2016
+- Chimitt & Chan, "Simulating Anisoplanatic Turbulence by Sampling Correlated Zernike Coefficients," CVPR 2020
 
-## Acknowledgments
+## Author
 
-- DAATSim atmospheric turbulence simulator
-- VGG-16 pre-trained weights from torchvision
-- PyTorch framework
-
-## License
-
-MIT License - see LICENSE file for details
-
-## Contact
-
-For questions or issues, please open a GitHub issue or contact sehrle@asu.edu
+Sam Ehrle  
+Arizona State University
