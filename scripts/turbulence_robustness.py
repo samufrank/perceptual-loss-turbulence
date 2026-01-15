@@ -4,15 +4,15 @@ Updated to accept pre-generated turbulent images from QuickTurbSim
 
 Usage:
     # With pre-generated turbulent images
-    python scripts/part3_turbulence_robustness.py \
+    python scripts/turbulence_robustness.py \
         --image data/test_images/boat.jpg \
         --turbulent-images data/turbulence_dataset/turbulent/boat_turb_*.png \
-        --output results/part3_turbulence_real
+        --output results/turbulence_robustness_real
     
     # With synthetic turbulence (fallback)
-    python scripts/part3_turbulence_robustness.py \
+    python scripts/turbulence_robustness.py \
         --image data/test_images/boat.jpg \
-        --output results/part3_turbulence_synthetic \
+        --output results/turbulence_robustness_synthetic \
         --use-synthetic
 """
 
@@ -486,10 +486,10 @@ def main(image_path, save_dir, layer_name='relu3_3',
         'image_path': image_path
     }
     
-    output_path = os.path.join(save_dir, 'part3_turbulence_results.json')
+    output_path = os.path.join(save_dir, 'results.json')
     with open(output_path, 'w') as f:
         json.dump(results, f, indent=4)
-    print(f"Saved: part3_turbulence_results.json")
+    print(f"Saved: results.json")
     
     print(f"\nAll results saved to: {save_dir}")
     print("Turbulence robustness evaluation complete!")
@@ -499,7 +499,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Turbulence vs Noise Robustness')
     parser.add_argument('--image', type=str, required=True,
                         help='Path to clean input image')
-    parser.add_argument('--output', type=str, default='results/part3_turbulence',
+    parser.add_argument('--output', type=str, default='results/turbulence_robustness',
                         help='Directory to save results')
     parser.add_argument('--layer', type=str, default='relu3_3',
                         choices=['relu1_2', 'relu2_2', 'relu3_3', 'relu4_3', 'relu5_3'],

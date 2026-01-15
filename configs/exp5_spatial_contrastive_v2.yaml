@@ -32,4 +32,4 @@ data:
   num_workers: 4
 
 output:
-  checkpoint_dir: results/part4/exp5_spatial_contrastive_v2
+  checkpoint_dir: results/encoder_training/exp5_spatial_contrastive_v2

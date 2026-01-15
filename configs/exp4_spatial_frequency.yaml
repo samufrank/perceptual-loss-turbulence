@@ -35,5 +35,5 @@ data:
   num_workers: 4
 
 output:
-  checkpoint_dir: "results/part4/exp4_spatial_frequency"
+  checkpoint_dir: "results/encoder_training/exp4_spatial_frequency"
 

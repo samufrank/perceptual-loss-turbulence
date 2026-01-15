@@ -31,4 +31,4 @@ data:
   num_workers: 4
 
 output:
-  checkpoint_dir: results/part4/exp6_full_model_large
+  checkpoint_dir: results/encoder_training/exp6_full_model_large

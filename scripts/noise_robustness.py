@@ -195,10 +195,10 @@ their essential content and structure.
             bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.8))
     
     plt.tight_layout()
-    plt.savefig(os.path.join(save_dir, 'part3_summary.png'), 
+    plt.savefig(os.path.join(save_dir, 'summary.png'), 
                 dpi=300, bbox_inches='tight')
     plt.close()
-    print(f"Saved: part3_summary.png")
+    print(f"Saved: summary.png")
 
 # TEST ALL LAYERS
 def test_all_layers(img_original, noise_levels, device, save_dir):
@@ -420,10 +420,10 @@ def main(image_path, save_dir, layer_name='relu3_3', noise_levels=None, test_all
             'image_path': image_path
         }
 
-        output_path = os.path.join(save_dir, 'part3_all_layers_results.json')
+        output_path = os.path.join(save_dir, 'all_layers_results.json')
         with open(output_path, 'w') as f:
             json.dump(results, f, indent=4)
-        print(f"Saved: part3_all_layers_results.json")
+        print(f"Saved: all_layers_results.json")
 
     else: 
         # Print results - only what was successfully computed
@@ -464,10 +464,10 @@ def main(image_path, save_dir, layer_name='relu3_3', noise_levels=None, test_all
                 'total': len(noise_levels)
             }
             
-            output_path = os.path.join(save_dir, 'part3_results.json')
+            output_path = os.path.join(save_dir, 'results.json')
             with open(output_path, 'w') as f:
                 json.dump(results, f, indent=4)
-            print(f"Saved: part3_results.json")
+            print(f"Saved: results.json")
             
             print(f"\nAll results saved to: {save_dir}")
             print("Robustness evaluation complete!")
@@ -479,7 +479,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Noise Robustness Evaluation')
     parser.add_argument('--image', type=str, default='data/test_images/sample.jpg',
                         help='Path to input image')
-    parser.add_argument('--output', type=str, default='results/part3',
+    parser.add_argument('--output', type=str, default='results/noise_robustness',
                         help='Directory to save results')
     parser.add_argument('--layer', type=str, default='relu3_3',
                         choices=['relu1_2', 'relu2_2', 'relu3_3', 'relu4_3', 'relu5_3'],

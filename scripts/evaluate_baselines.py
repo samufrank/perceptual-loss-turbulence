@@ -8,7 +8,7 @@ Experiment 2: VGG multi-layer (relu2_2 + relu3_3 + relu4_3)
 Usage:
     python scripts/evaluate_baselines.py \
         --test-dir data/part4_dataset_split/test \
-        --output-dir results/part4/baselines
+        --output-dir results/encoder_training/baselines
 """
 
 import os
@@ -123,7 +123,7 @@ def main():
                        default='data/part4_dataset_split/test',
                        help='Path to test directory')
     parser.add_argument('--output-dir', type=str,
-                       default='results/part4/baselines',
+                       default='results/encoder_training/baselines',
                        help='Output directory for results')
     parser.add_argument('--batch-size', type=int, default=16,
                        help='Batch size for evaluation')

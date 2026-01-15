@@ -109,18 +109,18 @@ similarity.
                     family='monospace', bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
     
     plt.tight_layout()
-    plt.savefig(os.path.join(save_dir, 'part1_summary.png'), 
+    plt.savefig(os.path.join(save_dir, 'summary.png'), 
                 dpi=300, bbox_inches='tight')
     plt.close()
-    print(f"Saved: part1_summary.png")
+    print(f"Saved: summary.png")
 
 
 def save_results(results, save_dir):
     """Save numerical results to JSON."""
-    output_path = os.path.join(save_dir, 'part1_results.json')
+    output_path = os.path.join(save_dir, 'results.json')
     with open(output_path, 'w') as f:
         json.dump(results, f, indent=4)
-    print(f"Saved: part1_results.json")
+    print(f"Saved: results.json")
 
 
 def main(image_path, save_dir):
@@ -190,7 +190,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Baseline lp Losses Analysis')
     parser.add_argument('--image', type=str, default='data/test_images/sample.jpg',
                         help='Path to input image')
-    parser.add_argument('--output', type=str, default='results/part1',
+    parser.add_argument('--output', type=str, default='results/baseline_analysis',
                         help='Directory to save results')
     
     args = parser.parse_args()

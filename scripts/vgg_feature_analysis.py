@@ -362,10 +362,10 @@ def main(image_path, save_dir, layers=None):
         'image_path': image_path
     }
     
-    output_path = os.path.join(save_dir, 'part2_results.json')
+    output_path = os.path.join(save_dir, 'results.json')
     with open(output_path, 'w') as f:
         json.dump(results, f, indent=4)
-    print(f"Saved: part2_results.json")
+    print(f"Saved: results.json")
     
     print(f"\nAll results saved to: {save_dir}")
     print("Feature analysis complete!")
@@ -375,7 +375,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='VGG-16 Feature Analysis')
     parser.add_argument('--image', type=str, default='data/test_images/sample.jpg',
                         help='Path to input image')
-    parser.add_argument('--output', type=str, default='results/part2',
+    parser.add_argument('--output', type=str, default='results/vgg_features',
                         help='Directory to save results')
     parser.add_argument('--layers', type=str, nargs='+', default=None,
                         help='Specific layers to analyze (default: relu1_2 relu2_2 relu3_3 relu4_3)')

@@ -4,8 +4,8 @@ Export all TensorBoard data to CSV and generate high-quality plots.
 
 Usage:
     python scripts/export_tensorboard_data.py \
-        --logdir results/part4 \
-        --output-dir results/part4/analysis
+        --logdir results/encoder_training \
+        --output-dir results/encoder_training/analysis
 """
 
 import os
@@ -208,9 +208,9 @@ def main():
         description='Export TensorBoard data and create plots'
     )
     
-    parser.add_argument('--logdir', type=str, default='results/part4',
+    parser.add_argument('--logdir', type=str, default='results/encoder_training',
                        help='Base directory containing experiment results')
-    parser.add_argument('--output-dir', type=str, default='results/part4/analysis',
+    parser.add_argument('--output-dir', type=str, default='results/encoder_training/analysis',
                        help='Output directory for exported data and plots')
     parser.add_argument('--experiments', type=str, nargs='+',
                        default=['exp3_spatial_only', 'exp4_spatial_frequency',
