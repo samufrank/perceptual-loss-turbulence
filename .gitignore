@@ -36,21 +36,8 @@ wheels/
 **/tensorboard/
 **/*tfevents*
 
-# Data - exclude image directories entirely
-data/clean_images/
-data/clean_images_large/
-data/part4_dataset/
-data/part4_dataset_split/
-data/part4_dataset_large/
-data/part4_dataset_large_split/
-data/test_images/
-data/test_turb/
-data/raw/
-data/turbulent/
-
-# Keep metadata files for dataset tracking
-!data/**/metadata.json
-!data/**/.gitkeep
+# Data - all generated/downloaded locally
+data/
 
 # Directories
 DAATSim/
@@ -73,10 +60,7 @@ venv.bak/
 *.swo
 *~
 .DS_Store
-
-# OS
 Thumbs.db
-.DS_Store
 
 # Temporary files
 *.tmp
